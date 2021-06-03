@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発言語
+- Ruby 2.6.5
+- Ruby on Rails 5.2.5
 
-Things you may want to cover:
+## 就業Termの技術
+- Ajax
+- AWS EC2
 
-* Ruby version
+## カリキュラム外の技術
+- chartkick
 
-* System dependencies
+## 実行手順
+```
+$ git clone https://github.com/a-myzk/tidy-up.git
+$ cd tidy-up
+$ bundle install
+$ rails db:create db:migrate
+$ rails s
+```
 
-* Configuration
+## カタログ設計
+https://docs.google.com/spreadsheets/d/11bgNHLEgxk9qg73yjoBgVL6qgoGhmiiID6IiWi9dcOk/edit#gid=911787783
 
-* Database creation
+## テーブル定義書
+https://docs.google.com/spreadsheets/d/11bgNHLEgxk9qg73yjoBgVL6qgoGhmiiID6IiWi9dcOk/edit#gid=1321170202
 
-* Database initialization
+## ワイヤーフレーム
+https://cacoo.com/diagrams/gnHKLoaxDhjy3Xqe/5B0F6
 
-* How to run the test suite
+## ER図
+https://cacoo.com/diagrams/RdIOf2GF8c4pTtH1/370FC
 
-* Services (job queues, cache servers, search engines, etc.)
+![ER図](https://user-images.githubusercontent.com/79129786/120609525-35624e80-c48d-11eb-9644-f7960f7f93c2.png)
 
-* Deployment instructions
+## 画面遷移図
+https://cacoo.com/diagrams/Wrl92uwn1qMOEHm0/3C9D7
 
-* ...
+![画面遷移図](https://user-images.githubusercontent.com/79129786/120608882-a1908280-c48c-11eb-9457-186595b326b0.png)
