@@ -6,7 +6,7 @@
 
 ## 就業Termの技術
 - Ajax
-- AWS EC2
+- お気に入り機能（フラグ機能）
 
 ## カリキュラム外の技術
 - chartkick
@@ -32,9 +32,9 @@ https://cacoo.com/diagrams/gnHKLoaxDhjy3Xqe/5B0F6
 ## ER図
 https://cacoo.com/diagrams/RdIOf2GF8c4pTtH1/370FC
 
-![ER図](https://user-images.githubusercontent.com/79129786/120609525-35624e80-c48d-11eb-9644-f7960f7f93c2.png)
+![ER図](https://user-images.githubusercontent.com/79129786/121310460-5d92f700-c93e-11eb-872b-387938625c38.png)
 
 ## 画面遷移図
 https://cacoo.com/diagrams/Wrl92uwn1qMOEHm0/3C9D7
 
-![画面遷移図](https://user-images.githubusercontent.com/79129786/120608882-a1908280-c48c-11eb-9457-186595b326b0.png)
+![画面遷移図](https://user-images.githubusercontent.com/79129786/121310538-6d124000-c93e-11eb-9fb7-6b7e65b8729c.png)
