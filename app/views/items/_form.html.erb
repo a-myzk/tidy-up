@@ -1,0 +1,22 @@
+<%= form_with(model: @item, local: true) do |form| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="item_form">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="item_form">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to "モノ一覧画面にもどる", items_path %>
