@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+      user: ユーザー
+    attributes:
+      item:
+        name: 名前
+      user:
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
