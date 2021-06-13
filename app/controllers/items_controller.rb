@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update]
 
   def index
     @items = Item.all
@@ -17,10 +18,25 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to items_path, notice: "ブログを編集しました！"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:name, :comment)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
