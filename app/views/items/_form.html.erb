@@ -38,6 +38,12 @@
   </div>
 
   <div class="item_field">
+    <%= form.select :category, Category.names.keys.to_a, {} %>
+
+
+  </div>
+
+  <div class="item_field">
     <%= form.label :comment %>
     <%= form.text_field :comment %>
   </div>
