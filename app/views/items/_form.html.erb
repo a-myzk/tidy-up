@@ -15,7 +15,24 @@
   </div>
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, id: :book_img %>
+    <script type="text/javascript">
+      $(function() {
+        function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#img_prev').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+        $("#book_img").change(function(){
+          readURL(this);
+        });
+      });
+    </script>
+    <%= image_tag @item.image.url, id: :img_prev %>
   </div>
   <div class="item_form">
     <%= form.label :comment %>
