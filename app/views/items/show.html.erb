@@ -1,0 +1,8 @@
+<h1>詳細画面</h1>
+<p>名前: <%= @item.name %></p>
+<p>写真: <%= image_tag @item.image.url %></p>
+<p>コメント: <%= @item.comment %></p>
+<p>最終更新日: <%= @item.updated_at %></p>
+
+<%= link_to "編集する", edit_item_path %> |
+<%= link_to "モノ一覧画面にもどる", items_path %>

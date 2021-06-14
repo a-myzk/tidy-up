@@ -1,0 +1,21 @@
+<h1>モノ一覧</h1>
+<p><%= notice %></p>
+
+<%= link_to '断捨離診断する', new_item_path %>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <th>更新日</th>
+    <th colspan="3"></th>
+  </tr>
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.updated_at %></td>
+    <td><%= link_to '詳細', item_path(item.id) %></td>
+    <td><%= link_to '編集', edit_item_path(item.id) %></td>
+    <td><%= link_to '削除', item, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+  </tr>
+<% end %>
+</table>

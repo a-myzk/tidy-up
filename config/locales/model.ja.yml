@@ -6,6 +6,8 @@ ja:
     attributes:
       item:
         name: 名前
+        image: 写真
+        comment: コメント
       user:
         name: 名前
         email: メールアドレス

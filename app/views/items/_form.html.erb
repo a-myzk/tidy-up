@@ -1,0 +1,47 @@
+<%= form_with(model: @item, local: true) do |form| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="item_field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="item_field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :item_image %>
+    <script type="text/javascript">
+      $(function() {
+        function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#image_prev').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+        $("#item_image").change(function(){
+          readURL(this);
+        });
+      });
+    </script>
+    <%= image_tag @item.image.url, id: :image_prev, width: '200' %>
+  </div>
+
+  <div class="item_field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
+<%= link_to "モノ一覧画面にもどる", items_path %>
