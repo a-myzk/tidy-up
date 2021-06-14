@@ -1,8 +1,6 @@
 <h1>詳細画面</h1>
 <p>名前: <%= @item.name %></p>
-<!--
-<p>写真: <%= @item.image %></p>
---->
+<p>写真: <%= image_tag @item.image.url %></p>
 <p>コメント: <%= @item.comment %></p>
 <p>最終更新日: <%= @item.updated_at %></p>
 
