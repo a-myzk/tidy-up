@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @category = Category.all
+    @item.categories.build
   end
 
   def create
@@ -41,7 +41,17 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :image, :image_cache, :comment)
+    params.require(:item).permit(
+      :name,
+      :image,
+      :image_cache,
+      :comment,
+      categories_attributes: [
+        :id,
+        :name,
+        :_destroy
+      ]
+    )
   end
 
   def set_item
