@@ -2,14 +2,16 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    @items = Item.all.includes(:categories)
   end
 
   def show
+    @category = Category.find(params[:id])
   end
 
   def new
     @item = Item.new
+    @item.categories.build
   end
 
   def create
@@ -40,7 +42,17 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :image, :image_cache, :comment)
+    params.require(:item).permit(
+      :name,
+      :image,
+      :image_cache,
+      :comment,
+      categories_attributes: [
+        :id,
+        :name,
+        :_destroy
+      ]
+    )
   end
 
   def set_item
