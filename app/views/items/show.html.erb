@@ -5,5 +5,11 @@
 <p>コメント: <%= @item.comment %></p>
 <p>最終更新日: <%= @item.updated_at %></p>
 
+<p>断捨離診断</p>
+<%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
+<div id="clothes_diagnoses_area">
+  <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
+</div>
+
 <%= link_to "編集する", edit_item_path %> |
 <%= link_to "モノ一覧画面にもどる", items_path %>
