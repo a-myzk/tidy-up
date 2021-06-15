@@ -1,0 +1,2 @@
+class ClothesDiagnosis < ApplicationRecord
+end
