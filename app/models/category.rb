@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   belongs_to :item
 
   enum name:{
-    選択してください: 0,
+    '-----': 0,
     衣料品: 1,
     日用品: 2,
     書籍: 3,

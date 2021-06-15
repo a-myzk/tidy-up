@@ -44,6 +44,7 @@
 
   <%= form.fields_for :categories do |category_fields| %>
     <div class="item_field">
+      <%= category_fields.label :name, 'カテゴリー' %>
       <%= category_fields.select :name, Category.names.keys.to_a %>
     </div>
   <% end %>
