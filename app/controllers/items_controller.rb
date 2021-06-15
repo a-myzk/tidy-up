@@ -7,6 +7,8 @@ class ItemsController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @clothes_diagnoses = @item.clothes_diagnoses.order(created_at: :desc).limit(1)
+    @clothes_diagnosis = @item.clothes_diagnoses.build
   end
 
   def new

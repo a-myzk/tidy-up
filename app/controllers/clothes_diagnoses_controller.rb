@@ -5,7 +5,7 @@ class ClothesDiagnosesController < ApplicationController
     @clothes_diagnosis = @item.clothes_diagnoses.build(clothes_diagnosis_params)
     respond_to do |format|
       if @clothes_diagnosis.save
-        format.html { render :index }
+        format.js { render :index }
       else
         format.html { redirect_to item_path(@item), notice: '診断できませんでした...' }
       end

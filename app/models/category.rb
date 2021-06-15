@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   belongs_to :item
-  belongs_to :clothes_diagnosis
+  belongs_to :clothes_diagnosis, optional: true
 
   enum name:{
     '-----': 0,

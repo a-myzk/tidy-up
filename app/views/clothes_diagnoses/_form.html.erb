@@ -1,0 +1,46 @@
+<%= form_with(model: [item, clothes_diagnosis]) do |form| %>
+  <% if clothes_diagnosis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clothes_diagnosis.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% clothes_diagnosis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="answer_one_field">
+    <p>第一問</p>
+    <%= form.label :one_answer, '必要ない' %>
+    <%= form.radio_button :one_answer, :bad %>
+    <%= form.label :one_answer, 'どちらでもない' %>
+    <%= form.radio_button :one_answer, :normal %>
+    <%= form.label :one_answer, '必要' %>
+    <%= form.radio_button :one_answer, :good %>
+  </div>
+
+  <div class="answer_two_field">
+    <p>第二問</p>
+    <%= form.label :two_answer, '必要ない' %>
+    <%= form.radio_button :two_answer, :bad_two %>
+    <%= form.label :two_answer, 'どちらでもない' %>
+    <%= form.radio_button :two_answer, :normal_two %>
+    <%= form.label :two_answer, '必要' %>
+    <%= form.radio_button :two_answer, :good_two %>
+  </div>
+
+  <div class="answer_three_field">
+    <p>第三問</p>
+    <%= form.label :three_answer, '必要ない' %>
+    <%= form.radio_button :three_answer, :bad_three %>
+    <%= form.label :three_answer, 'どちらでもない' %>
+    <%= form.radio_button :three_answer, :normal_three %>
+    <%= form.label :three_answer, '必要' %>
+    <%= form.radio_button :three_answer, :good_three %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '診断する' %>
+  </div>
+<% end %>
