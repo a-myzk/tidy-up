@@ -1,3 +1,4 @@
 class ClothesDiagnosis < ApplicationRecord
-has_many :categories, dependent: :destroy, inverse_of: :clothes_diagnosis
+has_many :categories, dependent: :destroy
+belongs_to :item
 end
