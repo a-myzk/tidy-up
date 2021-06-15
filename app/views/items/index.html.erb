@@ -6,12 +6,16 @@
 <table>
   <tr>
     <th>名前</th>
+    <th>カテゴリー</th>
     <th>更新日</th>
     <th colspan="3"></th>
   </tr>
 <% @items.each do |item| %>
   <tr>
     <td><%= item.name %></td>
+    <% item.categories.each do |category| %>
+      <td><%= category.name %></td>
+    <% end %>
     <td><%= item.updated_at %></td>
     <td><%= link_to '詳細', item_path(item.id) %></td>
     <td><%= link_to '編集', edit_item_path(item.id) %></td>
