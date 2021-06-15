@@ -45,9 +45,6 @@
   <%= form.fields_for :categories do |category_fields| %>
     <div class="item_field">
       <%= category_fields.select :name, Category.names.keys.to_a %>
-      <%#= category_fields.select :name, options_for_select(Category.names) %>
-      <%#= category_fields.select :name, options_for_select(Category.names.keys.to_a), {} %>
-      <%#= category_fields.select :name, options_for_select(Category.name_before_type_cast) %>
     </div>
   <% end %>
 
