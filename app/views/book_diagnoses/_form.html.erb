@@ -1,0 +1,77 @@
+<%= form_with(model: [item, book_diagnosis]) do |form| %>
+  <% if book_diagnosis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_diagnosis.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% book_diagnosis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="one_answer_field">
+    <p>問1：書籍</p>
+    <%= form.label :one_answer, 'あてはまる' %>
+    <%= form.radio_button :one_answer, :good_one %>
+    <%= form.label :one_answer, 'どちらでもない' %>
+    <%= form.radio_button :one_answer, :normal_one %>
+    <%= form.label :one_answer, 'あてはまらない' %>
+    <%= form.radio_button :one_answer, :bad_one %>
+  </div>
+
+  <br>
+
+  <div class="two_answer_field">
+    <p>問1：書籍</p>
+    <%= form.label :two_answer, 'あてはまる' %>
+    <%= form.radio_button :two_answer, :good_two %>
+    <%= form.label :two_answer, 'どちらでもない' %>
+    <%= form.radio_button :two_answer, :normal_two %>
+    <%= form.label :two_answer, 'あてはまらない' %>
+    <%= form.radio_button :two_answer, :bad_two %>
+  </div>
+
+  <br>
+
+  <div class="three_answer_field">
+    <p>問1：書籍</p>
+    <%= form.label :three_answer, 'あてはまる' %>
+    <%= form.radio_button :three_answer, :good_three %>
+    <%= form.label :three_answer, 'どちらでもない' %>
+    <%= form.radio_button :three_answer, :normal_three %>
+    <%= form.label :three_answer, 'あてはまらない' %>
+    <%= form.radio_button :three_answer, :bad_three %>
+  </div>
+
+  <br>
+
+  <div class="four_answer_field">
+    <p>問1：書籍</p>
+    <%= form.label :four_answer, 'あてはまる' %>
+    <%= form.radio_button :four_answer, :good_four %>
+    <%= form.label :four_answer, 'どちらでもない' %>
+    <%= form.radio_button :four_answer, :normal_four %>
+    <%= form.label :four_answer, 'あてはまらない' %>
+    <%= form.radio_button :four_answer, :bad_four %>
+  </div>
+
+  <br>
+
+  <div class="five_answer_field">
+    <p>問1：書籍</p>
+    <%= form.label :five_answer, 'あてはまる' %>
+    <%= form.radio_button :five_answer, :bad_five %>
+    <%= form.label :five_answer, 'どちらでもない' %>
+    <%= form.radio_button :five_answer, :normal_five %>
+    <%= form.label :five_answer, 'あてはまらない' %>
+    <%= form.radio_button :five_answer, :good_five %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= form.submit '診断する' %>
+  </div>
+
+<% end %>

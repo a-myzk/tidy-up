@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :clothes_diagnoses
     resources :goods_diagnoses
+    resources :book_diagnoses
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]

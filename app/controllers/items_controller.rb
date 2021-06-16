@@ -13,6 +13,9 @@ class ItemsController < ApplicationController
     elsif @category.name == "日用品"
       @goods_diagnoses = @item.goods_diagnoses.order(created_at: :desc).limit(1)
       @goods_diagnosis = @item.goods_diagnoses.build
+    elsif @category.name == "書籍"
+      @book_diagnoses = @item.book_diagnoses.order(created_at: :desc).limit(1)
+      @book_diagnosis = @item.book_diagnoses.build
     else
     end
   end
