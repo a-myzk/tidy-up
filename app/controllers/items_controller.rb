@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
     if @category.name == "衣料品"
       @clothes_diagnoses = @item.clothes_diagnoses.order(created_at: :desc).limit(1)
       @clothes_diagnosis = @item.clothes_diagnoses.build
-    elsif @category = Category.names.keys[2]
     end
   end
 

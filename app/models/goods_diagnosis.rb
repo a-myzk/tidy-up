@@ -1,0 +1,2 @@
+class GoodsDiagnosis < ApplicationRecord
+end
