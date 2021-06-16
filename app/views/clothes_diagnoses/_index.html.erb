@@ -2,23 +2,23 @@
   <% if clothes_diagnosis.id.present? %>
 
     <div>
-      <% if ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
-        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
-        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
-        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i <= 3 %>
+      <% if (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i <= 3 %>
         <p>まだ捨てないほうがいい！</p>
-      <% elsif ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
-        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
-        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
-        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i == 4..7 %>
+      <% elsif (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i == 4..7 %>
         <p>まだ捨なくてもいいかも（中）</p>
-      <% elsif ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
-        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
-        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
-        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i >= 50 %>
+      <% elsif (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i >= 50 %>
         <p>すべて選択してね</p>
       <% else %>
         <p>捨てよう！</p>
@@ -29,11 +29,11 @@
 
     <div>
       <p>リザルト点数確認用（実際はコメントアウト）</p>
-      <%= ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
-      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
-      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
-      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
-      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i %>
+      <%= (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i %>
     </div>
 
   <% end %>
