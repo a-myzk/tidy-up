@@ -5,6 +5,8 @@
 <p>コメント: <%= @item.comment %></p>
 <p>最終更新日: <%= @item.updated_at %></p>
 
+<hr>
+
 <p>断捨離診断</p>
 <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
 <div id="clothes_diagnoses_area">

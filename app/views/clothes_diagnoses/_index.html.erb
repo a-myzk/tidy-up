@@ -1,18 +1,34 @@
 <% clothes_diagnoses.each do |clothes_diagnosis| %>
   <% if clothes_diagnosis.id.present? %>
+
     <div>
       <% if ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
         ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i <= 2 %>
+        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
+        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
+        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i <= 2 %>
         <p>まだ捨てないほうがいい！（小）</p>
       <% elsif ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
         ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i >= 5 %>
-        <p>捨てちゃっていいよ！（大）</p>
+        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
+        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
+        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i >= 50 %>
+        <p>すべて選択してね</p>
       <% else %>
         <p>捨ててもいいかも（中）</p>
       <% end %>
     </div>
+
+<!--
+      <p>
+        <%= ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer].to_i +
+        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
+        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer].to_i +
+        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer].to_i +
+        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer].to_i +
+        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer].to_i %>
+      </p>
+--->
 
   <% end %>
 <% end %>

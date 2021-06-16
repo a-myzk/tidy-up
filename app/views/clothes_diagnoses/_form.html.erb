@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <div class="answer_one_field">
+  <div class="one_answer_field">
     <p>第一問</p>
     <%= form.label :one_answer, '必要ない' %>
     <%= form.radio_button :one_answer, :bad_one %>
@@ -20,7 +20,7 @@
     <%= form.radio_button :one_answer, :good_one %>
   </div>
 
-  <div class="answer_two_field">
+  <div class="two_answer_field">
     <p>第二問</p>
     <%= form.label :two_answer, '必要ない' %>
     <%= form.radio_button :two_answer, :bad_two %>
@@ -30,7 +30,7 @@
     <%= form.radio_button :two_answer, :good_two %>
   </div>
 
-  <div class="answer_three_field">
+  <div class="three_answer_field">
     <p>第三問</p>
     <%= form.label :three_answer, '必要ない' %>
     <%= form.radio_button :three_answer, :bad_three %>
@@ -40,7 +40,28 @@
     <%= form.radio_button :three_answer, :good_three %>
   </div>
 
+  <div class="four_answer_field">
+    <p>第三問</p>
+    <%= form.label :four_answer, '必要ない' %>
+    <%= form.radio_button :four_answer, :bad_four %>
+    <%= form.label :four_answer, 'どちらでもない' %>
+    <%= form.radio_button :four_answer, :normal_four %>
+    <%= form.label :four_answer, '必要' %>
+    <%= form.radio_button :four_answer, :good_four %>
+  </div>
+
+  <div class="five_answer_field">
+    <p>第三問</p>
+    <%= form.label :five_answer, '必要ない' %>
+    <%= form.radio_button :five_answer, :bad_five %>
+    <%= form.label :five_answer, 'どちらでもない' %>
+    <%= form.radio_button :five_answer, :normal_five %>
+    <%= form.label :five_answer, '必要' %>
+    <%= form.radio_button :five_answer, :good_five %>
+  </div>
+
   <div class="actions">
     <%= form.submit '診断する' %>
   </div>
+
 <% end %>
