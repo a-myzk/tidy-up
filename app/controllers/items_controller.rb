@@ -7,6 +7,20 @@ class ItemsController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    if @category.name == "衣料品"
+      @clothes_diagnoses = @item.clothes_diagnoses.order(created_at: :desc).limit(1)
+      @clothes_diagnosis = @item.clothes_diagnoses.build
+    elsif @category.name == "日用品"
+      @goods_diagnoses = @item.goods_diagnoses.order(created_at: :desc).limit(1)
+      @goods_diagnosis = @item.goods_diagnoses.build
+    elsif @category.name == "書籍"
+      @book_diagnoses = @item.book_diagnoses.order(created_at: :desc).limit(1)
+      @book_diagnosis = @item.book_diagnoses.build
+    elsif @category.name == "その他"
+      @other_diagnoses = @item.other_diagnoses.order(created_at: :desc).limit(1)
+      @other_diagnosis = @item.other_diagnoses.build
+    else
+    end
   end
 
   def new
@@ -17,7 +31,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path, notice: "登録しました！"
+      redirect_to @item, notice: "登録しました！"
     else
       render :new
     end

@@ -1,0 +1,3 @@
+$("#book_diagnoses_area").html("<%= j(render 'book_diagnoses/index', { book_diagnoses: @book_diagnosis.item.book_diagnoses.order(created_at: :desc).limit(1), item: @book_diagnosis.item }) %>");
+$("radio_button").val('');
+$("#notice").html("<%= j flash[:notice] %>");

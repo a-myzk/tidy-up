@@ -1,0 +1,34 @@
+<% other_diagnoses.each do |other_diagnosis| %>
+  <% if other_diagnosis.id.present? %>
+
+    <div>
+      <% if (OtherDiagnosis.one_answers[other_diagnosis.one_answer]+
+      OtherDiagnosis.two_answers[other_diagnosis.two_answer] +
+      OtherDiagnosis.three_answers[other_diagnosis.three_answer] +
+      OtherDiagnosis.four_answers[other_diagnosis.four_answer]+
+      OtherDiagnosis.five_answers[other_diagnosis.five_answer]).to_i <= 3 %>
+        <p>まだ捨てないほうがいい！</p>
+      <% elsif (OtherDiagnosis.one_answers[other_diagnosis.one_answer]+
+      OtherDiagnosis.two_answers[other_diagnosis.two_answer] +
+      OtherDiagnosis.three_answers[other_diagnosis.three_answer] +
+      OtherDiagnosis.four_answers[other_diagnosis.four_answer]+
+      OtherDiagnosis.five_answers[other_diagnosis.five_answer]).to_i >= 7 %>
+        <p>捨てよう！</p>
+      <% else %>
+        <p>まだ捨なくてもいいかも（中）</p>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div>
+      <p>リザルト点数確認用（実際はコメントアウト）</p>
+      <%= (OtherDiagnosis.one_answers[other_diagnosis.one_answer]+
+      OtherDiagnosis.two_answers[other_diagnosis.two_answer] +
+      OtherDiagnosis.three_answers[other_diagnosis.three_answer] +
+      OtherDiagnosis.four_answers[other_diagnosis.four_answer]+
+      OtherDiagnosis.five_answers[other_diagnosis.five_answer]).to_i %>
+    </div>
+
+  <% end %>
+<% end %>

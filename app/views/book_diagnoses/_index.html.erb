@@ -1,0 +1,34 @@
+<% book_diagnoses.each do |book_diagnosis| %>
+  <% if book_diagnosis.id.present? %>
+
+    <div>
+      <% if (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
+      BookDiagnosis.two_answers[book_diagnosis.two_answer] +
+      BookDiagnosis.three_answers[book_diagnosis.three_answer] +
+      BookDiagnosis.four_answers[book_diagnosis.four_answer]+
+      BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i <= 3 %>
+        <p>まだ捨てないほうがいい！</p>
+      <% elsif (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
+      BookDiagnosis.two_answers[book_diagnosis.two_answer] +
+      BookDiagnosis.three_answers[book_diagnosis.three_answer] +
+      BookDiagnosis.four_answers[book_diagnosis.four_answer]+
+      BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i >= 7 %>
+        <p>捨てよう！</p>
+      <% else %>
+        <p>まだ捨なくてもいいかも（中）</p>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div>
+      <p>リザルト点数確認用（実際はコメントアウト）</p>
+      <%= (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
+      BookDiagnosis.two_answers[book_diagnosis.two_answer] +
+      BookDiagnosis.three_answers[book_diagnosis.three_answer] +
+      BookDiagnosis.four_answers[book_diagnosis.four_answer]+
+      BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i %>
+    </div>
+
+  <% end %>
+<% end %>

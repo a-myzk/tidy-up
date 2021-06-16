@@ -1,0 +1,4 @@
+
+$("#goods_diagnoses_area").html("<%= j(render 'goods_diagnoses/index', { goods_diagnoses: @goods_diagnosis.item.goods_diagnoses.order(created_at: :desc).limit(1), item: @goods_diagnosis.item }) %>");
+$("radio_button").val('');
+$("#notice").html("<%= j flash[:notice] %>");

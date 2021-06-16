@@ -1,0 +1,34 @@
+<% clothes_diagnoses.each do |clothes_diagnosis| %>
+  <% if clothes_diagnosis.id.present? %>
+
+    <div>
+      <% if (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i <= 3 %>
+        <p>まだ捨てないほうがいい！</p>
+      <% elsif (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i >= 7 %>
+        <p>捨てよう！</p>
+      <% else %>
+        <p>まだ捨なくてもいいかも（中）</p>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div>
+      <p>リザルト点数確認用（実際はコメントアウト）</p>
+      <%= (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i %>
+    </div>
+
+  <% end %>
+<% end %>
