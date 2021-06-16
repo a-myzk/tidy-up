@@ -25,6 +25,11 @@
     <div id="book_diagnoses_area">
       <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
     </div>
+  <% elsif @category.name == "その他"%>
+    <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
+    <div id="book_diagnoses_area">
+      <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
+    </div>
   <% else %>
     <p>診断ができません。管理者に連絡してください。</p>
   <% end %>
