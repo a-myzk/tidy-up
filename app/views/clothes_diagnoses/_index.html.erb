@@ -12,16 +12,10 @@
       ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
       ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
       ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
-      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i == 4..7 %>
-        <p>まだ捨なくてもいいかも（中）</p>
-      <% elsif (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
-      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
-      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
-      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
-      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i >= 50 %>
-        <p>すべて選択してね</p>
-      <% else %>
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i >= 7 %>
         <p>捨てよう！</p>
+      <% else %>
+        <p>まだ捨なくてもいいかも（中）</p>
       <% end %>
     </div>
 
