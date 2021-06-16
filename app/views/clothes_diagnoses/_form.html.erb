@@ -11,54 +11,64 @@
   <% end %>
 
   <div class="one_answer_field">
-    <p>第一問</p>
-    <%= form.label :one_answer, '必要' %>
+    <p>1年を通して一度も活躍しなかった</p>
+    <%= form.label :one_answer, 'あてはまる' %>
     <%= form.radio_button :one_answer, :good_one %>
     <%= form.label :one_answer, 'どちらでもない' %>
     <%= form.radio_button :one_answer, :normal_one %>
-    <%= form.label :one_answer, '必要ない' %>
+    <%= form.label :one_answer, 'あてはまらない' %>
     <%= form.radio_button :one_answer, :bad_one %>
   </div>
 
+  <br>
+
   <div class="two_answer_field">
-    <p>第二問</p>
-    <%= form.label :two_answer, '必要' %>
+    <p>シミ、汚れがあったり、生地のダメージが気になる</p>
+    <%= form.label :two_answer, 'あてはまる' %>
     <%= form.radio_button :two_answer, :good_two %>
     <%= form.label :two_answer, 'どちらでもない' %>
     <%= form.radio_button :two_answer, :normal_two %>
-    <%= form.label :two_answer, '必要ない' %>
+    <%= form.label :two_answer, 'あてはまらない' %>
     <%= form.radio_button :two_answer, :bad_two %>
   </div>
 
+  <br>
+
   <div class="three_answer_field">
-    <p>第三問</p>
-    <%= form.label :three_answer, '必要' %>
+    <p>よく使用していたが、今の自分には合わない</p>
+    <%= form.label :three_answer, 'あてはまる' %>
     <%= form.radio_button :three_answer, :good_three %>
     <%= form.label :three_answer, 'どちらでもない' %>
     <%= form.radio_button :three_answer, :normal_three %>
-    <%= form.label :three_answer, '必要ない' %>
+    <%= form.label :three_answer, 'あてはまらない' %>
     <%= form.radio_button :three_answer, :bad_three %>
   </div>
 
+  <br>
+
   <div class="four_answer_field">
-    <p>第三問</p>
-    <%= form.label :four_answer, '必要' %>
+    <p>流行が過ぎてしまったものである</p>
+    <%= form.label :four_answer, 'あてはまる' %>
     <%= form.radio_button :four_answer, :good_four %>
     <%= form.label :four_answer, 'どちらでもない' %>
     <%= form.radio_button :four_answer, :normal_four %>
-    <%= form.label :four_answer, '必要ない' %>
+    <%= form.label :four_answer, 'あてはまらない' %>
     <%= form.radio_button :four_answer, :bad_four %>
   </div>
 
+  <br>
+
   <div class="five_answer_field">
-    <p>第三問</p>
-    <%= form.label :five_answer, '必要' %>
+    <p>思い出がある</p>
+    <%= form.label :five_answer, 'あてはまる' %>
     <%= form.radio_button :five_answer, :good_five %>
     <%= form.label :five_answer, 'どちらでもない' %>
     <%= form.radio_button :five_answer, :normal_five %>
-    <%= form.label :five_answer, '必要ない' %>
+    <%= form.label :five_answer, 'あてはまらない' %>
     <%= form.radio_button :five_answer, :bad_five %>
   </div>
+
+  <br>
 
   <div class="actions">
     <%= form.submit '診断する' %>
