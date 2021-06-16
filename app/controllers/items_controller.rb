@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path, notice: "登録しました！"
+      redirect_to @item, notice: "登録しました！"
     else
       render :new
     end
