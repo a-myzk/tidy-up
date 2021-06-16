@@ -1,5 +1,4 @@
 class OtherDiagnosis < ApplicationRecord
-  has_many :categories, dependent: :destroy
   belongs_to :item
 
   enum one_answer: {bad_one: 0, normal_one: 1, good_one: 2}
