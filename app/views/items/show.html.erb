@@ -27,7 +27,7 @@
     </div>
   <% elsif @category.name == "その他"%>
     <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
-    <div id="book_diagnoses_area">
+    <div id="other_diagnoses_area">
       <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
     </div>
   <% else %>
