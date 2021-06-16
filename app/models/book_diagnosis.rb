@@ -1,0 +1,2 @@
+class BookDiagnosis < ApplicationRecord
+end
