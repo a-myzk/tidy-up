@@ -29,8 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.user_id = current_user.id
+    @item = current_user.items.build(item_params)
     if @item.save
       redirect_to @item, notice: "登録しました！"
     else
