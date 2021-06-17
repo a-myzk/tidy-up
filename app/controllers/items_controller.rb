@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
       :image,
       :image_cache,
       :comment,
+      :status,
       categories_attributes: [
         :id,
         :name,

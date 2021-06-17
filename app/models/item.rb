@@ -8,4 +8,12 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   mount_uploader :image, ImageUploader
+
+  enum status:{
+    '-----': 0,
+    まだ捨てない: 1,
+    検討中: 2,
+    捨てる予定: 3,
+    捨てた！: 4
+  }
 end
