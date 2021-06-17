@@ -5,6 +5,7 @@
 
 <table>
   <tr>
+    <th>ユーザーネーム</th>
     <th>名前</th>
     <th>カテゴリー</th>
     <th>ステータス</th>
@@ -13,6 +14,7 @@
   </tr>
 <% @items.each do |item| %>
   <tr>
+    <td><%= item.user.name %></td>
     <td><%= item.name %></td>
     <% item.categories.each do |category| %>
       <td><%= category.name %></td>
