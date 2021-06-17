@@ -49,6 +49,11 @@
     </div>
   <% end %>
 
+  <div class="item_ffield">
+    <%= form.label :status, "ステータス" %>
+    <%= form.select :status, Item.statuses.keys %>
+  </div>
+
   <%= form.submit %>
 <% end %>
 <%= link_to "モノ一覧画面にもどる", items_path %>
