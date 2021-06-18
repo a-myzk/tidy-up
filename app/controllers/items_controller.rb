@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.includes(:categories)
+    @items = current_user.items.order(created_at: :DESC)
   end
 
   def show
@@ -29,7 +30,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.build(item_params)
     if @item.save
       redirect_to @item, notice: "登録しました！"
     else
