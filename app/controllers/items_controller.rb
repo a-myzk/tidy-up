@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.includes(:categories)
+    @items = current_user.items.order(created_at: :DESC)
   end
 
   def show
