@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @flag = current_user.flags.find_by(item_id: @item.id)
     @category = Category.find(params[:id])
     if @category.name == "衣料品"
       @clothes_diagnoses = @item.clothes_diagnoses.order(created_at: :desc).limit(1)

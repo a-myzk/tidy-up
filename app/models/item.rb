@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   has_many :goods_diagnoses, dependent: :destroy
   has_many :book_diagnoses, dependent: :destroy
   has_many :other_diagnoses, dependent: :destroy
+  has_many :flags, dependent: :destroy
 
   validates :name, presence: true
   mount_uploader :image, ImageUploader
