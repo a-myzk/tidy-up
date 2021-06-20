@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'sessions/new'
+  devise_for :users, :controllers => {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+    post 'users/admin_guest_sign_in', to: 'users/sessions#new_admin_guest'
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
   resources :items do
     resources :clothes_diagnoses
     resources :goods_diagnoses
@@ -8,7 +15,6 @@ Rails.application.routes.draw do
     resources :other_diagnoses
     resources :flags
   end
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:show]
   resources :flags, only: [:index, :create, :destroy]
 end
