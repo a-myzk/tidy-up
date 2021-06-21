@@ -16,4 +16,6 @@
 //= require jquery/dist/jquery.js
 //= require popper
 //= require bootstrap-sprockets
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .
