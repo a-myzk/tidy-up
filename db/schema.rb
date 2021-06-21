@@ -30,14 +30,6 @@ ActiveRecord::Schema.define(version: 2021_06_20_140057) do
     t.index ["item_id"], name: "index_book_diagnoses_on_item_id"
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.integer "name", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "item_id"
-    t.index ["item_id"], name: "index_categories_on_item_id"
-  end
-
   create_table "clothes_diagnoses", force: :cascade do |t|
     t.string "question"
     t.integer "one_answer"
@@ -123,7 +115,6 @@ ActiveRecord::Schema.define(version: 2021_06_20_140057) do
   end
 
   add_foreign_key "book_diagnoses", "items"
-  add_foreign_key "categories", "items"
   add_foreign_key "clothes_diagnoses", "items"
   add_foreign_key "flags", "items"
   add_foreign_key "flags", "users"
