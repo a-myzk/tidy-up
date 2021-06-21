@@ -17,9 +17,7 @@
   <tr>
     <td><%= item.user.name %></td>
     <td><%= item.name %></td>
-    <% item.categories.each do |category| %>
-      <td><%= category.name %></td>
-    <% end %>
+    <td><%= item.category %></td>
     <td><%= item.status %></td>
     <td><%= item.updated_at %></td>
     <td><%= link_to '詳細', item_path(item.id) ,class: "btn btn-warning text-white" %></td>
