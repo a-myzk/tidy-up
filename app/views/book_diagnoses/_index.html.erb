@@ -1,34 +1,30 @@
 <% book_diagnoses.each do |book_diagnosis| %>
   <% if book_diagnosis.id.present? %>
 
-    <div>
+  <div class="d-flex justify-content-center">
+    <div class="card w-50 p-3">
       <% if (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
       BookDiagnosis.two_answers[book_diagnosis.two_answer] +
       BookDiagnosis.three_answers[book_diagnosis.three_answer] +
       BookDiagnosis.four_answers[book_diagnosis.four_answer]+
       BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i <= 3 %>
-        <p>まだ捨てないほうがいい！</p>
+        <div class="card-header">まだ捨てちゃダメ！</div>
+        <div class="card-text">手放すことにかなり迷いがあるのでは？あなたにとって大切なものだという証拠です。大切に保管しておきましょう！</div>
       <% elsif (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
       BookDiagnosis.two_answers[book_diagnosis.two_answer] +
       BookDiagnosis.three_answers[book_diagnosis.three_answer] +
       BookDiagnosis.four_answers[book_diagnosis.four_answer]+
       BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i >= 7 %>
-        <p>捨てよう！</p>
+        <div class="card-header">今が手放すタイミング！</div>
+        <div class="card-text">もうそれは読むことはなさそうです。新しい出会いのために手放しましょう！</div>
       <% else %>
-        <p>まだ捨なくてもいいかも（中）</p>
+        <div class="card-header">もう少し様子を見よう！</div>
+        <div class="card-text">手放すにはまだ早いかも？来年まで読まなかったら断捨離を検討してみましょう！</div>
       <% end %>
     </div>
+  </div>
 
-    <br>
-
-    <div>
-      <p>リザルト点数確認用（実際はコメントアウト）</p>
-      <%= (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
-      BookDiagnosis.two_answers[book_diagnosis.two_answer] +
-      BookDiagnosis.three_answers[book_diagnosis.three_answer] +
-      BookDiagnosis.four_answers[book_diagnosis.four_answer]+
-      BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i %>
-    </div>
+  <br>
 
   <% end %>
 <% end %>
