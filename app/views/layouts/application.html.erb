@@ -27,7 +27,13 @@
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path %><span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!"><%= link_to "アカウント確認", edit_user_registration_path %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path %></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a>

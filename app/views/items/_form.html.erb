@@ -10,48 +10,64 @@
     </div>
   <% end %>
 
-  <div class="item_field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="container-fluid m">
+    <form class="form-horizontal">
+      <div class="form-group">
+          <%= form.label :name, class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+      </div>
 
-  <div class="item_field">
-    <%= form.label :image %>
-    <%= form.file_field :image, id: :item_image %>
-    <script type="text/javascript">
-      $(function() {
-        function readURL(input) {
-          if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              $('#image_prev').attr('src', e.target.result);
+      <div class="form-group">
+        <%= form.label :image %>
+        <script type="text/javascript">
+          $(function() {
+            function readURL(input) {
+              if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                  $('#image_prev').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+              }
             }
-            reader.readAsDataURL(input.files[0]);
-          }
-        }
-        $("#item_image").change(function(){
-          readURL(this);
-        });
-      });
-    </script>
-    <%= image_tag @item.image.url, id: :image_prev, width: '200' %>
+            $("#item_image").change(function(){
+              readURL(this);
+            });
+          });
+        </script>
+        <%= image_tag @item.image.url, id: :image_prev, width: '200' %>
+        <%= form.file_field :image, id: :item_image %>
+      </div>
+
+      <div class="form-group">
+          <%= form.label :comment, class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= form.text_area :comment, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <%= form.label :category, "カテゴリー", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= form.select :category, Item.categories.keys, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <%= form.label :status, "ステータス", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= form.select :status, Item.statuses.keys, class: "form-control" %>
+        </div>
+      </div>
+
+      <%= form.submit '登録して診断する' %>
+
+    </form>
+    <div class="mt-3">
+      <%= link_to "モノ一覧画面にもどる", items_path, class: "btn btn-secondary text-white" %>
+    </div>
   </div>
 
-  <div class="item_field">
-    <%= form.label :comment %>
-    <%= form.text_field :comment %>
-  </div>
-
-  <div class="item_field">
-    <%= form.label :category, "カテゴリー" %>
-    <%= form.select :category, Item.categories.keys %>
-  </div>
-
-  <div class="item_field">
-    <%= form.label :status, "ステータス" %>
-    <%= form.select :status, Item.statuses.keys %>
-  </div>
-
-  <%= form.submit %>
 <% end %>
-<%= link_to "モノ一覧画面にもどる", items_path %>
