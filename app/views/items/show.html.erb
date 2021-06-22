@@ -40,7 +40,7 @@
       <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
     </div>
   <% else %>
-    <p>診断ができません。管理者に連絡してください。</p>
+    <p>診断ができません。カテゴリーを選択してください。</p>
   <% end %>
 
 <%= link_to "編集する", edit_item_path %> |
