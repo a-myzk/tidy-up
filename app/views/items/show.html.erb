@@ -18,7 +18,7 @@
 
 <hr>
 
-<p>断捨離診断</p>
+<h3>断捨離診断</h3>
   <% if @item.category == "衣料品"%>
     <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
     <div id="clothes_diagnoses_area">
