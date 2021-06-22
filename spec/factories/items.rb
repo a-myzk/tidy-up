@@ -7,7 +7,7 @@ FactoryBot.define do
     category { 1 }
   end
 
-  factory :item do, class: Item do
+  factory :second_item, class: Item do
     name { 'test_name2' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/default.png'))}
     comment { 'test_comment2' }
@@ -15,7 +15,7 @@ FactoryBot.define do
     category { 2 }
   end
 
-  factory :item do, class: Item do
+  factory :third_item, class: Item do
     name { 'test_name3' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/default.png'))}
     comment { 'test_comment3' }
@@ -24,7 +24,7 @@ FactoryBot.define do
   end
 
 
-  factory :item do, class: Item do
+  factory :fourth_item, class: Item do
     name { 'test_name4' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/default.png'))}
     comment { 'test_comment4' }
@@ -32,7 +32,7 @@ FactoryBot.define do
     category { 4 }
   end
 
-  factory :item do, class: Item do
+  factory :fifth_item, class: Item do
     name { 'test_name5' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/default.png'))}
     comment { 'test_comment5' }
