@@ -10,15 +10,15 @@
 <p>
   <% @item.user_id == current_user.id %>
     <% if @flag.present? %>
-      <%= link_to 'お気に入り解除する', flag_path(id: @flag.id), method: :delete %>
+      <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete %>
     <% else %>
-      <%= link_to 'お気に入りする', flags_path(item_id: @item.id), method: :post %>
+      <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post %>
     <% end %>
 </p>
 
 <hr>
 
-<p>断捨離診断</p>
+<h3>断捨離診断</h3>
   <% if @item.category == "衣料品"%>
     <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
     <div id="clothes_diagnoses_area">
@@ -40,7 +40,7 @@
       <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
     </div>
   <% else %>
-    <p>診断ができません。管理者に連絡してください。</p>
+    <p>診断ができません。カテゴリーを選択してください。</p>
   <% end %>
 
 <%= link_to "編集する", edit_item_path %> |

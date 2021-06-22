@@ -10,67 +10,87 @@
     </div>
   <% end %>
 
-  <div class="one_answer_field">
-    <p>問1：日用品</p>
-    <%= form.label :one_answer, 'あてはまる' %>
-    <%= form.radio_button :one_answer, :good_one %>
-    <%= form.label :one_answer, 'どちらでもない' %>
-    <%= form.radio_button :one_answer, :normal_one %>
-    <%= form.label :one_answer, 'あてはまらない' %>
-    <%= form.radio_button :one_answer, :bad_one %>
+  <!-- 質問1 --->
+  <div class="card answer_field w-50 p-3">
+    <div class="card-header">扱いにくく、使用頻度が低い<br>
+      <div class="card-body">
+        <%= form.label :one_answer, 'あてはまる' %>
+        <%= form.radio_button :one_answer, :good_one %><br>
+        <%= form.label :one_answer, 'どちらでもない' %>
+        <%= form.radio_button :one_answer, :normal_one %><br>
+        <%= form.label :one_answer, 'あてはまらない' %>
+        <%= form.radio_button :one_answer, :bad_one %>
+      </div>
+    </div>
   </div>
 
   <br>
 
-  <div class="two_answer_field">
-    <p>問1：日用品</p>
-    <%= form.label :two_answer, 'あてはまる' %>
-    <%= form.radio_button :two_answer, :good_two %>
-    <%= form.label :two_answer, 'どちらでもない' %>
-    <%= form.radio_button :two_answer, :normal_two %>
-    <%= form.label :two_answer, 'あてはまらない' %>
-    <%= form.radio_button :two_answer, :bad_two %>
-  </div>
+  <!-- 質問2 --->
+    <div class="card answer_field w-50 p-3">
+      <div class="card-header">いくつも同じようなものを持っている<br>
+        <div class="card-body">
+          <%= form.label :two_answer, 'あてはまる' %>
+          <%= form.radio_button :two_answer, :good_two %><br>
+          <%= form.label :two_answer, 'どちらでもない' %>
+          <%= form.radio_button :two_answer, :normal_two %><br>
+          <%= form.label :two_answer, 'あてはまらない' %>
+          <%= form.radio_button :two_answer, :bad_two %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+  <!-- 質問3 --->
+    <div class="card answer_field w-50 p-3">
+      <div class="card-header">1年以上使っておらず、現時点で使う予定がない<br>
+        <div class="card-body">
+          <%= form.label :three_answer, 'あてはまる' %>
+          <%= form.radio_button :three_answer, :good_three %><br>
+          <%= form.label :three_answer, 'どちらでもない' %>
+          <%= form.radio_button :three_answer, :normal_three %><br>
+          <%= form.label :three_answer, 'あてはまらない' %>
+          <%= form.radio_button :three_answer, :bad_three %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+  <!-- 質問4 --->
+    <div class="card answer_field w-50 p-3">
+      <div class="card-header">景品や引き出物でもらったものだが、使っていない<br>
+        <div class="card-body">
+          <%= form.label :four_answer, 'あてはまる' %>
+          <%= form.radio_button :four_answer, :good_four %><br>
+          <%= form.label :four_answer, 'どちらでもない' %>
+          <%= form.radio_button :four_answer, :normal_four %><br>
+          <%= form.label :four_answer, 'あてはまらない' %>
+          <%= form.radio_button :four_answer, :bad_four %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+  <!-- 質問5 --->
+    <div class="card answer_field w-50 p-3">
+      <div class="card-header">以前は気に入っていたが、今はそうでもない<br>
+        <div class="card-body">
+          <%= form.label :five_answer, 'あてはまる' %>
+          <%= form.radio_button :five_answer, :good_five %><br>
+          <%= form.label :five_answer, 'どちらでもない' %>
+          <%= form.radio_button :five_answer, :normal_five %><br>
+          <%= form.label :five_answer, 'あてはまらない' %>
+          <%= form.radio_button :five_answer, :bad_five %>
+        </div>
+      </div>
+    </div>
 
   <br>
 
-  <div class="three_answer_field">
-    <p>問1：日用品</p>
-    <%= form.label :three_answer, 'あてはまる' %>
-    <%= form.radio_button :three_answer, :good_three %>
-    <%= form.label :three_answer, 'どちらでもない' %>
-    <%= form.radio_button :three_answer, :normal_three %>
-    <%= form.label :three_answer, 'あてはまらない' %>
-    <%= form.radio_button :three_answer, :bad_three %>
-  </div>
-
-  <br>
-
-  <div class="four_answer_field">
-    <p>問1：日用品</p>
-    <%= form.label :four_answer, 'あてはまる' %>
-    <%= form.radio_button :four_answer, :good_four %>
-    <%= form.label :four_answer, 'どちらでもない' %>
-    <%= form.radio_button :four_answer, :normal_four %>
-    <%= form.label :four_answer, 'あてはまらない' %>
-    <%= form.radio_button :four_answer, :bad_four %>
-  </div>
-
-  <br>
-
-  <div class="five_answer_field">
-    <p>問1：日用品</p>
-    <%= form.label :five_answer, 'あてはまる' %>
-    <%= form.radio_button :five_answer, :bad_five %>
-    <%= form.label :five_answer, 'どちらでもない' %>
-    <%= form.radio_button :five_answer, :normal_five %>
-    <%= form.label :five_answer, 'あてはまらない' %>
-    <%= form.radio_button :five_answer, :good_five %>
-  </div>
-
-  <br>
-
-  <div class="actions">
+  <div class="actions d-flex justify-content-center">
     <%= form.submit '診断する' %>
   </div>
 
