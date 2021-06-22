@@ -27,29 +27,29 @@
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path %></a>
+              <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn btn-outline-info mr-3" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "アカウント確認", edit_user_registration_path %></a>
+              <a class="nav-link" href="#!"><%= link_to "アカウント確認", edit_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path %></a>
+              <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a>
+              <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-info" %></a>
             </li>
           <% else %>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "新規登録", new_user_registration_path %></a>
+              <a class="nav-link" href="#!"><%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "ログイン", new_user_session_path %></a>
+              <a class="nav-link" href="#!"><%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info mr-3" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %></a>
+              <a class="nav-link" href="#!"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-outline-info mr-3" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#!"><%= link_to "管理者ゲストログイン", users_admin_guest_sign_in_path, method: :post %></a>
+              <a class="nav-link" href="#!"><%= link_to "管理者ゲストログイン", users_admin_guest_sign_in_path, method: :post, class: "btn btn-outline-info" %></a>
             </li>
           <% end %>
         </ul>

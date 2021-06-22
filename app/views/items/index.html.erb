@@ -22,9 +22,9 @@
     <td><%= item.category %></td>
     <td><%= item.status %></td>
     <td><%= item.updated_at %></td>
-    <td><%= link_to '詳細を見る / 再診断', item_path(item.id) ,class: "btn btn-warning text-white" %></td>
-    <td><%= link_to '編集', edit_item_path(item.id) %></td>
-    <td><%= link_to '削除', item, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+    <td><%= link_to '詳細を見る / 再診断', item_path(item.id), class: "btn btn-outline-dark" %></td>
+    <td><%= link_to '編集', edit_item_path(item.id), class: "btn btn-outline-dark" %></td>
+    <td><%= link_to '削除', item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
   </tr>
 <% end %>
 </table>
