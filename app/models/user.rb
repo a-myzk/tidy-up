@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   before_validation { email.downcase! }
-  validates :password, presence: true, length: { minimum: 6 }
 
   def self.guest
     find_or_create_by!(email: 'guest@guest.com') do |user|
