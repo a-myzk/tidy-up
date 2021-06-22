@@ -10,9 +10,9 @@
 <p>
   <% @item.user_id == current_user.id %>
     <% if @flag.present? %>
-      <%= link_to 'お気に入り解除する', flag_path(id: @flag.id), method: :delete %>
+      <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete %>
     <% else %>
-      <%= link_to 'お気に入りする', flags_path(item_id: @item.id), method: :post %>
+      <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post %>
     <% end %>
 </p>
 
