@@ -1,9 +1,14 @@
 <div class="container">
-  <h1>モノ一覧</h1>
-  <p><%= notice %></p>
+  <div class="row">
+    <% if current_user.try(:admin?) %>
+      <h2>モノ一覧（管理者）</h2>
+    <% else %>
+      <h2>モノ一覧</h2>
+    <% end %>
 
-  <%= link_to '断捨離診断する', new_item_path %>
-  <%= link_to 'フラグ一覧を見る', flags_path %>
+    <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info mr-3 mt-3" %>
+    <%= link_to 'フラグ一覧を見る', flags_path, class: "btn btn-outline-info mt-3" %>
+  </div>
 
 
   <div class="table table-hover">
