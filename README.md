@@ -6,6 +6,7 @@
 
 ## 就業Termの技術
 - Ajax
+- divise
 - お気に入り機能（フラグ機能）
 
 ## カリキュラム外の技術
@@ -32,7 +33,7 @@ https://cacoo.com/diagrams/gnHKLoaxDhjy3Xqe/5B0F6
 ## ER図
 https://cacoo.com/diagrams/RdIOf2GF8c4pTtH1/370FC
 
-![ER図](https://user-images.githubusercontent.com/79129786/121469179-013fde00-c9f7-11eb-8821-ab576da31d3d.png)
+![新ER図](https://user-images.githubusercontent.com/79129786/123029932-e7ea5900-d41c-11eb-892a-645eca52cb79.png)
 
 ## 画面遷移図
 https://cacoo.com/diagrams/Wrl92uwn1qMOEHm0/3C9D7
