@@ -7,7 +7,10 @@
     <% end %>
 
     <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info mr-3 mt-3" %>
-    <%= link_to 'フラグ一覧を見る', flags_path, class: "btn btn-outline-info mt-3" %>
+    <%= link_to 'フラグ一覧を見る', flags_path, class: "btn btn-outline-info mr-3 mt-3" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to '管理画面', rails_admin_path, class: "btn btn-outline-info mt-3" %>
+    <% end %>
   </div>
 
 
