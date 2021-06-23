@@ -20,11 +20,13 @@ RSpec.describe 'モノ管理機能', type: :system do
         visit new_item_path
         fill_in 'item[name]', with: 'test_name1'
         fill_in 'item[comment]', with: 'test_comment1'
+        attach_file 'item[image]', "#{Rails.root}/spec/fixtures/default.png"
         find('#item_category').set(1)
         find('#item_status').set(1)
         click_on '登録して診断する'
         expect(page).to have_content 'test_name1'
         expect(page).to have_content 'test_comment1'
+        expect(page).to have_selector("img[src$='default.png']")
       end
     end
   end
