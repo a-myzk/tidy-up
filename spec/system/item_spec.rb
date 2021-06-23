@@ -2,6 +2,10 @@ require 'rails_helper'
 RSpec.describe 'モノ管理機能', type: :system do
   let(:user) { FactoryBot.create(:user) }
   let!(:item) { FactoryBot.create(:item, user: user) }
+  let!(:second_item) { FactoryBot.create(:second_item, user: user) }
+  let!(:third_item) { FactoryBot.create(:third_item, user: user) }
+  let!(:fourth_item) { FactoryBot.create(:fourth_item, user: user) }
+  let!(:fifth_item) { FactoryBot.create(:fifth_item, user: user) }
 
   describe 'モノ新規登録機能' do
     before do
@@ -38,6 +42,12 @@ RSpec.describe 'モノ管理機能', type: :system do
         visit items_path
         expect(page).to have_content 'test_name1'
         expect(page).to have_content '衣料品'
+      end
+    end
+    context 'モノ一覧が更新日時の降順に並んでいる場合' do
+      it '最後に更新したモノが一番上に表示される' do
+        item_content = all('.item_content')
+        expect(item_content[0]).to have_content 'test_name5'
       end
     end
   end
