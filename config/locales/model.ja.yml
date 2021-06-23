@@ -3,6 +3,7 @@ ja:
     models:
       item: アイテム
       user: ユーザー
+      flag: フラグ
     attributes:
       item:
         name: 名前

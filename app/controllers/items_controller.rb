@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :access_reject, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -69,6 +70,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def access_reject
+    redirect_to user_path(current_user.id) if current_user != @item.user
   end
 
 end
