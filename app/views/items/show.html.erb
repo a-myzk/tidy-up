@@ -1,47 +1,49 @@
-<h1>詳細画面</h1>
-<p><%= notice %></p>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <h1>詳細画面</h1>
+  <p><%= notice %></p>
 
-<p>名前: <%= @item.name %></p>
-<p>写真: <%= image_tag @item.image.url %></p>
-<p>カテゴリー: <%= @item.category %></p>
-<p>ステータス: <%= @item.status %></p>
-<p>コメント: <%= @item.comment %></p>
-<p>最終更新日: <%= @item.updated_at %></p>
-<p>
-  <% @item.user_id == current_user.id %>
-    <% if @flag.present? %>
-      <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete %>
+  <p>名前: <%= @item.name %></p>
+  <p>写真: <%= image_tag @item.image.url %></p>
+  <p>カテゴリー: <%= @item.category %></p>
+  <p>ステータス: <%= @item.status %></p>
+  <p>コメント: <%= @item.comment %></p>
+  <p>最終更新日: <%= @item.updated_at %></p>
+  <p>
+    <% @item.user_id == current_user.id %>
+      <% if @flag.present? %>
+        <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete %>
+      <% else %>
+        <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post %>
+      <% end %>
+  </p>
+
+</div>
+
+
+  <h3 class="text-center">断捨離診断</h3>
+    <% if @item.category == "衣料品"%>
+      <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
+      <div id="clothes_diagnoses_area">
+        <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
+      </div>
+    <% elsif @item.category == "日用品"%>
+      <%= render partial: 'goods_diagnoses/form', locals: { goods_diagnosis: @goods_diagnosis, item: @item } %>
+      <div id="goods_diagnoses_area">
+        <%= render partial: 'goods_diagnoses/index', locals: { goods_diagnoses: @goods_diagnoses, item: @item } %>
+      </div>
+    <% elsif @item.category == "書籍"%>
+      <%= render partial: 'book_diagnoses/form', locals: { book_diagnosis: @book_diagnosis, item: @item } %>
+      <div id="book_diagnoses_area">
+        <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
+      </div>
+    <% elsif @item.category == "その他"%>
+      <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
+      <div id="other_diagnoses_area">
+        <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
+      </div>
     <% else %>
-      <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post %>
+      <p>診断ができません。カテゴリーを選択してください。</p>
     <% end %>
-</p>
 
-<hr>
-
-<h3>断捨離診断</h3>
-  <% if @item.category == "衣料品"%>
-    <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
-    <div id="clothes_diagnoses_area">
-      <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
-    </div>
-  <% elsif @item.category == "日用品"%>
-    <%= render partial: 'goods_diagnoses/form', locals: { goods_diagnosis: @goods_diagnosis, item: @item } %>
-    <div id="goods_diagnoses_area">
-      <%= render partial: 'goods_diagnoses/index', locals: { goods_diagnoses: @goods_diagnoses, item: @item } %>
-    </div>
-  <% elsif @item.category == "書籍"%>
-    <%= render partial: 'book_diagnoses/form', locals: { book_diagnosis: @book_diagnosis, item: @item } %>
-    <div id="book_diagnoses_area">
-      <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
-    </div>
-  <% elsif @item.category == "その他"%>
-    <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
-    <div id="other_diagnoses_area">
-      <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
-    </div>
-  <% else %>
-    <p>診断ができません。カテゴリーを選択してください。</p>
-  <% end %>
-
-<%= link_to "編集する", edit_item_path %> |
-<%= link_to "モノ一覧画面にもどる", items_path %>
+  <%= link_to "編集する", edit_item_path %> |
+  <%= link_to "モノ一覧画面にもどる", items_path %>
