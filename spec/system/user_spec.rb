@@ -27,6 +27,23 @@ RSpec.describe 'ユーザー管理機能', type: :system do
         expect(page).to have_content 'ログインしました'
       end
     end
+    context 'ログイン済みの場合' do
+      before do
+        FactoryBot.create(:user)
+        visit new_user_session_path
+        fill_in 'user[email]', with: 'test_email1@example.com'
+        fill_in 'user[password]', with: 'password1'
+        click_button 'ログイン'
+      end
+      it 'プロフィール画面に飛べる' do
+        click_on 'アカウント確認'
+        expect(page).to have_content 'test_email1@example.com'
+      end
+      it 'ログアウトができる' do
+        click_on 'ログアウト'
+        expect(page).to have_content 'ログアウトしました'
+      end
+    end
   end
 
 end
