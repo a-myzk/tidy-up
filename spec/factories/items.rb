@@ -23,7 +23,6 @@ FactoryBot.define do
     category { 3 }
   end
 
-
   factory :fourth_item, class: Item do
     name { 'test_name4' }
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/default.png'))}
