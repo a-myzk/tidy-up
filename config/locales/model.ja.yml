@@ -6,7 +6,7 @@ ja:
       flag: フラグ
     attributes:
       item:
-        name: 名前
+        name: モノ
         image: 写真
         comment: コメント
       user:
