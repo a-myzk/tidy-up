@@ -10,7 +10,7 @@ ja:
         image: 写真
         comment: コメント
       user:
-        name: 名前
+        name: ユーザー名
         email: メールアドレス
         current_password: 現在のパスワード
         password: パスワード
