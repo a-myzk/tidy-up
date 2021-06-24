@@ -16,7 +16,7 @@
       <div class="card-header">1年を通して一度も活躍しなかった<br>
         <div class="card-body">
           <%= form.label :one_answer, 'あてはまる' %>
-          <%= form.radio_button :one_answer, :good_one %><br>
+          <%= form.radio_button :one_answer, :good_one, required: :firefox %><br>
           <%= form.label :one_answer, 'どちらでもない' %>
           <%= form.radio_button :one_answer, :normal_one %><br>
           <%= form.label :one_answer, 'あてはまらない' %>
@@ -34,7 +34,7 @@
       <div class="card-header">シミ、汚れがあったり、生地のダメージが気になる<br>
         <div class="card-body">
           <%= form.label :two_answer, 'あてはまる' %>
-          <%= form.radio_button :two_answer, :good_two %><br>
+          <%= form.radio_button :two_answer, :good_two, required: :firefox %><br>
           <%= form.label :two_answer, 'どちらでもない' %>
           <%= form.radio_button :two_answer, :normal_two %><br>
           <%= form.label :two_answer, 'あてはまらない' %>
@@ -52,7 +52,7 @@
       <div class="card-header">よく使用していたが、今の自分には合わない<br>
         <div class="card-body">
           <%= form.label :three_answer, 'あてはまる' %>
-          <%= form.radio_button :three_answer, :good_three %><br>
+          <%= form.radio_button :three_answer, :good_three, required: :firefox %><br>
           <%= form.label :three_answer, 'どちらでもない' %>
           <%= form.radio_button :three_answer, :normal_three %><br>
           <%= form.label :three_answer, 'あてはまらない' %>
@@ -70,7 +70,7 @@
       <div class="card-header">流行が過ぎてしまったものである<br>
         <div class="card-body">
           <%= form.label :four_answer, 'あてはまる' %>
-          <%= form.radio_button :four_answer, :good_four %><br>
+          <%= form.radio_button :four_answer, :good_four, required: :firefox %><br>
           <%= form.label :four_answer, 'どちらでもない' %>
           <%= form.radio_button :four_answer, :normal_four %><br>
           <%= form.label :four_answer, 'あてはまらない' %>
@@ -88,7 +88,7 @@
       <div class="card-header">思い出がある<br>
         <div class="card-body">
           <%= form.label :five_answer, 'あてはまる' %>
-          <%= form.radio_button :five_answer, :good_five %><br>
+          <%= form.radio_button :five_answer, :good_five, required: :firefox %><br>
           <%= form.label :five_answer, 'どちらでもない' %>
           <%= form.radio_button :five_answer, :normal_five %><br>
           <%= form.label :five_answer, 'あてはまらない' %>
