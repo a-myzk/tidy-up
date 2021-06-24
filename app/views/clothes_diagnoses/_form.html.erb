@@ -11,17 +11,16 @@
   <% end %>
 
   <!-- 質問1 --->
-  <div class="d-flex justify-content-center">
-    <div class="card answer_field w-50 p-3">
-      <div class="card-header">1年を通して一度も活躍しなかった<br>
-        <div class="card-body">
-          <%= form.label :one_answer, 'あてはまる' %>
-          <%= form.radio_button :one_answer, :good_one %><br>
-          <%= form.label :one_answer, 'どちらでもない' %>
-          <%= form.radio_button :one_answer, :normal_one %><br>
-          <%= form.label :one_answer, 'あてはまらない' %>
-          <%= form.radio_button :one_answer, :bad_one %>
-        </div>
+  <div class="d-flex justify-content-center text-center">
+    <div class="answer_field">
+      <div class="mb-2">1年を通して一度も活躍しなかった</div>
+      <div class="shadow-sm p-3 mb-5 bg-light rounded">
+        <%= form.radio_button :one_answer, :good_one, required: :firefox %>
+        <%= form.label :one_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :one_answer, :normal_one %>
+        <%= form.label :one_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :one_answer, :bad_one %>
+        <%= form.label :one_answer, 'あてはまらない' %>
       </div>
     </div>
   </div>
@@ -29,17 +28,16 @@
     <br>
 
   <!-- 質問2 --->
-  <div class="d-flex justify-content-center">
-    <div class="card answer_field w-50 p-3">
-      <div class="card-header">シミ、汚れがあったり、生地のダメージが気になる<br>
-        <div class="card-body">
-          <%= form.label :two_answer, 'あてはまる' %>
-          <%= form.radio_button :two_answer, :good_two %><br>
-          <%= form.label :two_answer, 'どちらでもない' %>
-          <%= form.radio_button :two_answer, :normal_two %><br>
-          <%= form.label :two_answer, 'あてはまらない' %>
-          <%= form.radio_button :two_answer, :bad_two %>
-        </div>
+  <div class="d-flex justify-content-center text-center">
+    <div class="answer_field">
+      <div class="mb-2">1年を通して一度も活躍しなかった</div>
+      <div class="shadow-sm p-3 mb-5 bg-light rounded">
+        <%= form.radio_button :two_answer, :good_two, required: :firefox %>
+        <%= form.label :two_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :two_answer, :normal_two %>
+        <%= form.label :two_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :two_answer, :bad_two %>
+        <%= form.label :two_answer, 'あてはまらない' %>
       </div>
     </div>
   </div>
@@ -47,17 +45,16 @@
     <br>
 
   <!-- 質問3 --->
-  <div class="d-flex justify-content-center">
-    <div class="card answer_field w-50 p-3">
-      <div class="card-header">よく使用していたが、今の自分には合わない<br>
-        <div class="card-body">
-          <%= form.label :three_answer, 'あてはまる' %>
-          <%= form.radio_button :three_answer, :good_three %><br>
-          <%= form.label :three_answer, 'どちらでもない' %>
-          <%= form.radio_button :three_answer, :normal_three %><br>
-          <%= form.label :three_answer, 'あてはまらない' %>
-          <%= form.radio_button :three_answer, :bad_three %>
-        </div>
+  <div class="d-flex justify-content-center text-center">
+    <div class="answer_field">
+      <div class="mb-2">1年を通して一度も活躍しなかった</div>
+      <div class="shadow-sm p-3 mb-5 bg-light rounded">
+        <%= form.radio_button :three_answer, :good_three, required: :firefox %>
+        <%= form.label :three_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :three_answer, :normal_three %>
+        <%= form.label :three_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :three_answer, :bad_three %>
+        <%= form.label :three_answer, 'あてはまらない' %>
       </div>
     </div>
   </div>
@@ -65,17 +62,16 @@
     <br>
 
   <!-- 質問4 --->
-  <div class="d-flex justify-content-center">
-    <div class="card answer_field w-50 p-3">
-      <div class="card-header">流行が過ぎてしまったものである<br>
-        <div class="card-body">
-          <%= form.label :four_answer, 'あてはまる' %>
-          <%= form.radio_button :four_answer, :good_four %><br>
-          <%= form.label :four_answer, 'どちらでもない' %>
-          <%= form.radio_button :four_answer, :normal_four %><br>
-          <%= form.label :four_answer, 'あてはまらない' %>
-          <%= form.radio_button :four_answer, :bad_four %>
-        </div>
+  <div class="d-flex justify-content-center text-center">
+    <div class="answer_field">
+      <div class="mb-2">1年を通して一度も活躍しなかった</div>
+      <div class="shadow-sm p-3 mb-5 bg-light rounded">
+        <%= form.radio_button :four_answer, :good_four, required: :firefox %>
+        <%= form.label :four_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :four_answer, :normal_four %>
+        <%= form.label :four_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :four_answer, :bad_four %>
+        <%= form.label :four_answer, 'あてはまらない' %>
       </div>
     </div>
   </div>
@@ -83,24 +79,23 @@
     <br>
 
   <!-- 質問5 --->
-  <div class="d-flex justify-content-center">
-    <div class="card answer_field w-50 p-3">
-      <div class="card-header">思い出がある<br>
-        <div class="card-body">
-          <%= form.label :five_answer, 'あてはまる' %>
-          <%= form.radio_button :five_answer, :good_five %><br>
-          <%= form.label :five_answer, 'どちらでもない' %>
-          <%= form.radio_button :five_answer, :normal_five %><br>
-          <%= form.label :five_answer, 'あてはまらない' %>
-          <%= form.radio_button :five_answer, :bad_five %>
-        </div>
+  <div class="d-flex justify-content-center text-center">
+    <div class="answer_field">
+      <div class="mb-2">1年を通して一度も活躍しなかった</div>
+      <div class="shadow-sm p-3 mb-5 bg-light rounded">
+        <%= form.radio_button :five_answer, :good_five, required: :firefox %>
+        <%= form.label :five_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :five_answer, :normal_five %>
+        <%= form.label :five_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :five_answer, :bad_five %>
+        <%= form.label :five_answer, 'あてはまらない' %>
       </div>
     </div>
   </div>
 
   <br>
 
-  <div class="actions d-flex justify-content-center">
+  <div class="actions d-flex justify-content-center mb-3">
     <%= form.submit '診断する' %>
   </div>
 
