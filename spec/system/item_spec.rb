@@ -53,17 +53,4 @@ RSpec.describe 'モノ管理機能', type: :system do
       end
     end
   end
-
-  # describe 'グラフ機能' do
-  #   context 'モノ一覧ページを表示した場合場合' do
-  #     it 'カテゴリー別のパイチャートが表示される' do
-  #       visit items_path
-  #       find('#item_category').set(1)
-  #       find('#item_category').set(2)
-  #       expect(page).to have_content '衣料品'
-  #       expect(page).to have_content '日用品'
-  #     end
-  #   end
-  # end
-
 end

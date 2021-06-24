@@ -1,0 +1,38 @@
+require 'rails_helper'
+RSpec.describe 'モノ管理機能', type: :system do
+  let(:user) { FactoryBot.create(:user) }
+  let!(:item) { FactoryBot.create(:item, user: user) }
+  describe '診断結果のテスト' do
+    before do
+      visit new_user_session_path
+      fill_in 'user[email]' , with: 'test_email1@example.com'
+      fill_in 'user[password]', with: 'password1'
+      click_button 'ログイン'
+      visit items_path
+    end
+    context '各項目のラジオボタンがひとつでも未選択の場合' do
+      it '診断ができない' do
+        visit item_path(item.id)
+        find("input[name='clothes_diagnosis[one_answer]'][value='good_one']").set(true)
+        expect(page).to have_checked_field with: 'good_one', visible: false
+      end
+    end
+    context '各項目のラジオボタンにすべてチェックされている場合' do
+      it '診断結果が表示される' do
+        visit item_path(item.id)
+        find('#radio_button1').choose
+        expect(page).to have_checked_field with: 'good_one', visible: false
+        find('#radio_button4').choose
+        expect(page).to have_checked_field with: 'good_two', visible: false
+        find('#radio_button7').choose
+        expect(page).to have_checked_field with: 'good_three', visible: false
+        find('#radio_button10').choose
+        expect(page).to have_checked_field with: 'good_four', visible: false
+        find('#radio_button13').choose
+        expect(page).to have_checked_field with: 'good_five', visible: false
+        click_on '診断する'
+        
+      end
+    end
+  end
+end
