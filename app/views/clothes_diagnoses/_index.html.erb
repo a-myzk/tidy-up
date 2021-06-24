@@ -1,7 +1,7 @@
 <% clothes_diagnoses.each do |clothes_diagnosis| %>
   <% if clothes_diagnosis.id.present? %>
 
-  <div class="d-flex justify-content-center" c>
+  <div class="d-flex justify-content-center" >
     <div class="card w-50 p-3">
       <% if ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer] == nil ||
         ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] == nil ||
