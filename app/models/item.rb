@@ -10,7 +10,7 @@ class Item < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   enum category: {
-    '-----': 0,
+    （カテゴリー未選択）: 0,
     衣料品: 1,
     日用品: 2,
     書籍: 3,
@@ -18,7 +18,7 @@ class Item < ApplicationRecord
   }
 
   enum status: {
-    '-------': 0,
+    （ステータス未選択）: 0,
     まだ捨てない: 1,
     検討中: 2,
     捨てる予定: 3,

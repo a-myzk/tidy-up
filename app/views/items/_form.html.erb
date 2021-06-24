@@ -16,8 +16,8 @@
         <div class="col-3 text-right">
           <%= form.label :name, class: "control-label" %>
         </div>
-        <div class="col-6">
-          <%= form.text_field :name, class: "form-control" %>
+        <div class="col-7">
+          <%= form.text_field :name, class: "form-control", placeholder: "モノ"  %>
         </div>
       </div>
 
@@ -41,7 +41,7 @@
             });
           });
         </script>
-        <div class="col-6">
+        <div class="col-7">
           <%= image_tag @item.image.url, id: :image_prev, width: '200' %>
           <%= form.file_field :image, id: :item_image %>
         </div>
@@ -51,8 +51,8 @@
         <div class="col-3 text-right">
           <%= form.label :comment, class: "control-label" %>
         </div>
-        <div class="col-6">
-          <%= form.text_area :comment, class: "form-control" %>
+        <div class="col-7">
+          <%= form.text_area :comment, class: "form-control", placeholder: "コメント"  %>
         </div>
       </div>
 
@@ -60,8 +60,8 @@
         <div class="col-3 text-right">
           <%= form.label :category, "カテゴリー", class: "control-label" %>
         </div>
-        <div class="col-6">
-          <%= form.select :category, Item.categories.keys, class: "form-control" %>
+        <div class="col-7">
+          <%= form.select :category, Item.categories.keys, class: "form-control" %>（未選択の場合、診断ができません。）
         </div>
       </div>
 
@@ -69,8 +69,8 @@
         <div class="col-3 text-right">
           <%= form.label :status, "ステータス", class: "control-label" %>
         </div>
-        <div class="col-6">
-          <%= form.select :status, Item.statuses.keys, class: "form-control" %>
+        <div class="col-7">
+          <%= form.select :status, Item.statuses.keys, class: "form-control" %>（未選択でも可）
         </div>
       </div>
 
