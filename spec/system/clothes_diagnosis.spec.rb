@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'モノ管理機能', type: :system do
+RSpec.describe '衣料品カテゴリ診断機能', type: :system do
   let(:user) { FactoryBot.create(:user) }
   let!(:item) { FactoryBot.create(:item, user: user) }
   describe '診断結果のテスト' do

@@ -3,32 +3,23 @@
 
   <div class="d-flex justify-content-center" >
     <div class="card w-50 p-3">
-      <% if ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer] == nil ||
-        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] == nil ||
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] == nil ||
-        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer] == nil ||
-        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer] == nil %>
-          <div class="card-header" id="result1">解答が未選択の項目があります</div>
-          <div class="card-text">選択してください</div>
+      <% if (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i <= 3 %>
+        <div class="card-header" id="result1">まだ捨てちゃダメ！</div>
+        <div class="card-text">手放すことにかなり迷いがあるのでは？あなたにとって大切なものだという証拠です。大切にしまっておきましょう！</div>
+      <% elsif (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
+      ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
+      ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
+      ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
+      ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i >= 7 %>
+        <div class="card-header" id="result2">今が手放すタイミング！</div>
+        <div class="card-text">もうそれは使っていませんね？今まで活躍してくれたことに感謝して、新しい出会いのために手放しましょう！</div>
       <% else %>
-        <% if (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
-        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
-        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
-        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i <= 3 %>
-          <div class="card-header" id="result1">まだ捨てちゃダメ！</div>
-          <div class="card-text">手放すことにかなり迷いがあるのでは？あなたにとって大切なものだという証拠です。大切にしまっておきましょう！</div>
-        <% elsif (ClothesDiagnosis.one_answers[clothes_diagnosis.one_answer]+
-        ClothesDiagnosis.two_answers[clothes_diagnosis.two_answer] +
-        ClothesDiagnosis.three_answers[clothes_diagnosis.three_answer] +
-        ClothesDiagnosis.four_answers[clothes_diagnosis.four_answer]+
-        ClothesDiagnosis.five_answers[clothes_diagnosis.five_answer]).to_i >= 7 %>
-          <div class="card-header" id="result2">今が手放すタイミング！</div>
-          <div class="card-text">もうそれは使っていませんね？今まで活躍してくれたことに感謝して、新しい出会いのために手放しましょう！</div>
-        <% else %>
-          <div class="card-header" id="result3">もう少し様子を見よう！</div>
-          <div class="card-text">手放すにはまだ早いかも？来年まで使わなかったら断捨離を検討してみましょう！</div>
-        <% end %>
+        <div class="card-header" id="result3">もう少し様子を見よう！</div>
+        <div class="card-text">手放すにはまだ早いかも？来年まで使わなかったら断捨離を検討してみましょう！</div>
       <% end %>
     </div>
   </div>
