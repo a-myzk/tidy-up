@@ -13,8 +13,19 @@ RSpec.describe 'モノ管理機能', type: :system do
     context '各項目のラジオボタンがひとつでも未選択の場合' do
       it '診断ができない' do
         visit item_path(item.id)
-        find("input[name='clothes_diagnosis[one_answer]'][value='good_one']").set(true)
+        find('#radio_button1').choose
         expect(page).to have_checked_field with: 'good_one', visible: false
+        find('#radio_button4').choose
+        expect(page).to have_checked_field with: 'good_two', visible: false
+        find('#radio_button7').choose
+        expect(page).to have_checked_field with: 'good_three', visible: false
+        find('#radio_button10').choose
+        expect(page).to have_checked_field with: 'good_four', visible: false
+        find("input[name='commit'][value='診断する']").click
+        sleep(0.5)
+        expect(page).not_to have_content 'まだ捨てちゃダメ！'
+        expect(page).not_to have_content '今が手放すタイミング！'
+        expect(page).not_to have_content 'もう少し様子を見よう！'
       end
     end
     context '各項目のラジオボタンにすべてチェックされている場合' do
@@ -30,8 +41,9 @@ RSpec.describe 'モノ管理機能', type: :system do
         expect(page).to have_checked_field with: 'good_four', visible: false
         find('#radio_button13').choose
         expect(page).to have_checked_field with: 'good_five', visible: false
-        click_on '診断する'
-        
+        find("input[name='commit'][value='診断する']").click
+        sleep(0.5)
+        expect(page).to have_content '今が手放すタイミング！'
       end
     end
   end
