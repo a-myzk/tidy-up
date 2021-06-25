@@ -83,11 +83,11 @@
     <div class="answer_field">
       <div class="mb-2">思い出がある</div>
       <div class="shadow-sm p-3 mb-5 bg-light rounded">
-        <%= form.radio_button :five_answer, :bad_five, required: :firefox, id: "radio_button13" %>
+        <%= form.radio_button :five_answer, :good_five, required: :firefox, id: "radio_button13" %>
         <%= form.label :five_answer, 'あてはまる', class: 'mr-5'%>
         <%= form.radio_button :five_answer, :normal_five, id: "radio_button14" %>
         <%= form.label :five_answer, 'どちらでもない', class: 'mr-5' %>
-        <%= form.radio_button :five_answer, :good_five, id: "radio_button15" %>
+        <%= form.radio_button :five_answer, :bad_five, id: "radio_button15" %>
         <%= form.label :five_answer, 'あてはまらない' %>
       </div>
     </div>
