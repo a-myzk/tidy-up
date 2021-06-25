@@ -1,28 +1,44 @@
 
-<div class="d-flex text-white">
-  <div class="p-2 flex-grow-1  bg-primary">Flex item</div>
 
-  <div class="p-2 bg-success "><%= image_tag 'alexandra-gorn-W5dsm9n6e3g-unsplash.jpg', size: '550x620' %></div>
-</div>
+<div class="d-flex justify-content-between ml-5">
+  <div class="top-content d-inline-block mt-5">
 
-
-<div class="d-flex">
-  <div class="top-content d-inline-block">
-
-    <span class="d-md-inline-block align-items-center">
+    <span class="d-md-inline-block align-items-center ml-5">
       <h1>Tidy Up</h1>
-      <p>「断捨離をしたいけど、何を基準にしたら良いか分からない！」</p>
+      <p class="mt-3">「断捨離をしたいけど、何を基準にしたら良いか分からない！」</p>
       <p>そんな方のためのモノ診断アプリケーションです。</p>
-      <p>捨てるべきか迷っているモノを、質問に答えるだけで簡単に診断できます。</p>
     </span>
 
-      <span class="d-sm-inline-block bg-primary">d-inline-block</span>
-      <span class="d-sm-inline-block bg-primary">d-sm-inline-block</span>
 
+
+    <div class="d-flex mt-5">
+      <span class="d-md-flex ml-5 mr-5">
+        <div class="card" style="width: 18rem;">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="40" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#e6efed" width="100%" height="100%"/></svg>
+          <div class="card-body">
+            <h5 class="card-title">断捨離診断</h5>
+            <p class="card-text">捨てるべきか迷っているモノを、5つの質問に答えるだけで簡単に診断できます。</p>
+          </div>
+        </div>
+      </span>
+          <span class="d-md-flex ml-5 mr-5">
+        <div class="card" style="width: 18rem;">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="40" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#e6efed" width="100%" height="100%"/></svg>
+          <div class="card-body">
+            <h5 class="card-title">モノ一覧表示機能</h5>
+            <p class="card-text">登録したものは一覧リストでいつでも確認できます。</p>
+            <a href="#!"><%= link_to "はじめる", new_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="d-inline-block mr-3">
     <span class="d-md-inline-block">
       <%= image_tag 'alexandra-gorn-W5dsm9n6e3g-unsplash.jpg', size: '550x640' %>
     </span>
+  </div>
 
-    </div>
 
 </div>
