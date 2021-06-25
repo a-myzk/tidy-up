@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <% if current_user.try(:admin?) %>
-      <h2>モノ一覧（管理者）</h2>
+      <h2><%= @user.name %>のモノ一覧（管理者）</h2>
     <% else %>
-      <h2>モノ一覧</h2>
+      <h2><%= @user.name %>のモノ一覧</h2>
     <% end %>
 
     <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info mr-3 mt-3" %>
