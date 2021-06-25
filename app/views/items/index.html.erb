@@ -14,7 +14,7 @@
   </div>
 
 
-  <div class="table table-hover">
+  <div class="table table-hover text-center">
     <table>
       <thead>
         <tr>
@@ -37,8 +37,11 @@
       </tr>
     <% end %>
     </table>
-  <h4>カテゴリー別グラフ</h4>
-  <%= pie_chart @chart %>
+
+    <div class="category-chart ">
+      <h4 class="text-center mt-3">カテゴリー別グラフ</h4>
+      <%= pie_chart @chart %>
+    </div>
   </div>
 
 </div>
