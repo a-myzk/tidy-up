@@ -34,6 +34,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'chartkick'
 gem 'groupdate'
 
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
