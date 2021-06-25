@@ -1,4 +1,4 @@
-<h2 class="sign-up"><%= t('.sign_up') %></h2>
+<h2 class="userpage-item"><%= t('.sign_up') %></h2>
 
 <div class="field-content d-flex justify-content-center">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,7 +27,7 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード"  %>
     </div>
 
-    <div class="sign-up actions mt-4">
+    <div class="userpage-item actions mt-4">
       <%= f.submit t('.sign_up') %>
     </div>
   <% end %>
