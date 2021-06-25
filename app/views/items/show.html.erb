@@ -1,4 +1,4 @@
-<div class="container d-flex flex-column justify-content-center align-items-center">
+<div class="d-flex flex-column">
   <h1>詳細画面</h1>
   <p><%= notice %></p>
 
@@ -31,36 +31,45 @@
 </table>
 
 <% @item.user_id == current_user.id %>
-  <% if @flag.present? %>
+<% if @flag.present? %>
+  <div class="userpage-item mt-2">
     <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete, class: "btn btn-outline-info mt-2" %>
-  <% else %>
+  </div>
+<% else %>
+  <div class="userpage-item mt-2">
     <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post, class: "btn btn-outline-info mt-2" %>
-  <% end %>
+  </div>
+<% end %>
 
-  <h3 class="mt-5 mb-4">断捨離診断</h3>
-    <% if @item.category == "衣料品"%>
-      <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
-      <div id="clothes_diagnoses_area">
-        <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
-      </div>
-    <% elsif @item.category == "日用品"%>
-      <%= render partial: 'goods_diagnoses/form', locals: { goods_diagnosis: @goods_diagnosis, item: @item } %>
-      <div id="goods_diagnoses_area">
-        <%= render partial: 'goods_diagnoses/index', locals: { goods_diagnoses: @goods_diagnoses, item: @item } %>
-      </div>
-    <% elsif @item.category == "書籍"%>
-      <%= render partial: 'book_diagnoses/form', locals: { book_diagnosis: @book_diagnosis, item: @item } %>
-      <div id="book_diagnoses_area">
-        <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
-      </div>
-    <% elsif @item.category == "その他"%>
-      <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
-      <div id="other_diagnoses_area">
-        <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
-      </div>
-    <% else %>
-      <p>診断ができません。カテゴリーを選択してください。</p>
-    <% end %>
+<h3 class="mt-5 mb-4 text-center">断捨離診断</h3>
+<% if @item.category == "衣料品"%>
+  <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
+  <div id="clothes_diagnoses_area">
+    <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
+  </div>
+<% elsif @item.category == "日用品"%>
+  <%= render partial: 'goods_diagnoses/form', locals: { goods_diagnosis: @goods_diagnosis, item: @item } %>
+  <div id="goods_diagnoses_area">
+    <%= render partial: 'goods_diagnoses/index', locals: { goods_diagnoses: @goods_diagnoses, item: @item } %>
+  </div>
+<% elsif @item.category == "書籍"%>
+  <%= render partial: 'book_diagnoses/form', locals: { book_diagnosis: @book_diagnosis, item: @item } %>
+  <div id="book_diagnoses_area">
+    <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
+  </div>
+<% elsif @item.category == "その他"%>
+  <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
+  <div id="other_diagnoses_area">
+    <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
+  </div>
+<% else %>
+  <p>診断ができません。カテゴリーを選択してください。</p>
+<% end %>
 
+<div class="userpage-item mt-2">
   <%= link_to "編集する", edit_item_path, class: "btn btn-outline-info mb-3" %>
+</div>
+
+<div class="userpage-item mt-2 mb-5">
   <%= link_to "モノ一覧画面にもどる", items_path, class: "btn btn-outline-dark" %>
+</div>
