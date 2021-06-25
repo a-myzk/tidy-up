@@ -2,24 +2,42 @@
   <h1>詳細画面</h1>
   <p><%= notice %></p>
 
-  <p>名前: <%= @item.name %></p>
-  <p>写真: <%= image_tag @item.image.url %></p>
-  <p>カテゴリー: <%= @item.category %></p>
-  <p>ステータス: <%= @item.status %></p>
-  <p>コメント: <%= @item.comment %></p>
-  <p>最終更新日: <%= @item.updated_at %></p>
-  <p>
-    <% @item.user_id == current_user.id %>
-      <% if @flag.present? %>
-        <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete %>
-      <% else %>
-        <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post %>
-      <% end %>
-  </p>
+<table class="item-content table-reflow text-center bg-light">
+  <thead>
+    <tr>
+      <th></th>
+      <th>モノ:</th>
+      <th>写真: </th>
+      <th>カテゴリー:</th>
+      <th>ステータス:</th>
+      <th>コメント:</th>
+      <th>最終更新日:</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td><%= @item.name %></td>
+      <td style="width: 220px;"><%= image_tag @item.image.url %></td>
+      <td><%= @item.category %></td>
+      <td><%= @item.status %></td>
+      <td style="width: 220px;"><%= @item.comment %></td>
+      <td><%= @item.updated_at.strftime('%Y/%m/%d') %></td>
+      <td><%= link_to '編集', edit_item_path(@item.id), class: "btn btn-outline-dark" %></td>
+      <td><%= link_to '削除', @item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
+    </tr>
+  </tbody>
+</table>
 
-</div>
+<% @item.user_id == current_user.id %>
+  <% if @flag.present? %>
+    <%= link_to 'フラグを解除する', flag_path(id: @flag.id), method: :delete, class: "btn btn-outline-info mt-2" %>
+  <% else %>
+    <%= link_to 'フラグを立てる', flags_path(item_id: @item.id), method: :post, class: "btn btn-outline-info mt-2" %>
+  <% end %>
 
-  <h3 class="text-center">断捨離診断</h3>
+  <h3 class="mt-5 mb-4">断捨離診断</h3>
     <% if @item.category == "衣料品"%>
       <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
       <div id="clothes_diagnoses_area">
@@ -44,5 +62,5 @@
       <p>診断ができません。カテゴリーを選択してください。</p>
     <% end %>
 
-  <%= link_to "編集する", edit_item_path %> |
-  <%= link_to "モノ一覧画面にもどる", items_path %>
+  <%= link_to "編集する", edit_item_path, class: "btn btn-outline-info mb-3" %>
+  <%= link_to "モノ一覧画面にもどる", items_path, class: "btn btn-outline-dark" %>
