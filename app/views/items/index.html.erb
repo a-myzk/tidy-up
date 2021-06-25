@@ -18,7 +18,6 @@
     <table>
       <thead>
         <tr>
-          <th>ユーザーネーム</th>
           <th>モノ</th>
           <th>カテゴリー</th>
           <th>ステータス</th>
@@ -28,7 +27,6 @@
       </thead>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.user.name %></td>
         <td class="item_content"><%= item.name %></td>
         <td class="item_content"><%= item.category %></td>
         <td class="item_content"><%= item.status %></td>
