@@ -20,9 +20,9 @@
     <% end %>
 
     <div class="actions userpage-item">
-      <%= f.submit t('.sign_in') %>
+      <%= f.submit t('.sign_in'), class: "btn btn-outline-dark" %>
     </div>
   <% end %>
 </div>
 
-<div class="userpage-item mt-5 mb-5"><%= render "devise/shared/links" %></div>
+<div class="userpage-item mt-5 mb-5 "><%= link_to "アカウント新規登録", new_user_registration_path, class: "btn btn-outline-info"%></div>
