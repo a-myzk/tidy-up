@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
     @items = Item.all
     @items = current_user.items.order(created_at: :DESC)
     @chart = current_user.items.group(:category).count
+    @user = current_user
   end
 
   def show
