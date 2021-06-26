@@ -1,4 +1,5 @@
 require 'rails_helper'
+require "cancan/matchers"
 
 RSpec.describe User, type: :model do
   let(:user) { FactoryBot.create(:user) }
@@ -72,6 +73,21 @@ RSpec.describe User, type: :model do
       it 'バリデーションに引っかかる' do
         user.password = "hoge"*13
         expect(user).to be_invalid
+      end
+    end
+  end
+
+  describe '管理者権限機能' do
+    context '管理者権限がある場合' do
+      it 'ユーザ-の作成・編集・削除ができる' do
+        @manager = FactoryBot.create(:admin_user)
+        @ability = Ability.new(@manager)
+        test_user = User.new(name: "test", email: "test@test.com", password: "password")
+        expect(@ability).to be_able_to(:create, test_user)
+        test_user = User.new(name: "test", email: "test@test.com", password: "password")
+        expect(@ability).to be_able_to(:edit, test_user)
+        test_user = User.new(name: "test", email: "test@test.com", password: "password")
+        expect(@ability).to be_able_to(:destroy, test_user)
       end
     end
   end
