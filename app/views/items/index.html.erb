@@ -25,6 +25,7 @@
           <th colspan="3"></th>
         </tr>
       </thead>
+    <% index = 0 %>
     <% @items.each do |item| %>
       <tr>
         <td class="item_content"><%= item.name %></td>
@@ -32,9 +33,10 @@
         <td class="item_content"><%= item.status %></td>
         <td class="item_content"><%= item.updated_at.strftime('%Y/%m/%d') %></td>
         <td><%= link_to '詳細を見る / 再診断', item_path(item.id), class: "btn btn-outline-dark" %></td>
-        <td><%= link_to '編集', edit_item_path(item.id), class: "btn btn-outline-dark" %></td>
+        <td><%= link_to '編集', edit_item_path(item.id), class: "btn btn-outline-dark", id: "edit-button#{index}" %></td>
         <td><%= link_to '削除', item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
       </tr>
+      <% index += 1 %>
     <% end %>
     </table>
 

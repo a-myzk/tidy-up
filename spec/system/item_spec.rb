@@ -41,7 +41,6 @@ RSpec.describe 'モノ管理機能', type: :system do
     end
     context 'モノ一覧ページを表示した場合' do
       it '作成したモノ一覧が表示される' do
-        visit items_path
         expect(page).to have_content 'test_name1'
         expect(page).to have_content '衣料品'
       end
@@ -50,6 +49,23 @@ RSpec.describe 'モノ管理機能', type: :system do
       it '最後に更新したモノが一番上に表示される' do
         item_content = all('.item_content')
         expect(item_content[0]).to have_content 'test_name5'
+      end
+    end
+    context 'モノを編集した場合' do
+      it '編集できる' do
+        find('#edit-button0').click
+        expect(page).to have_content 'test_comment5'
+        fill_in 'item[comment]', with: 'コメント1'
+        click_on '登録して診断する'
+        expect(page).to have_content '編集しました'
+        expect(page).not_to have_content 'test_comment5'
+      end
+    end
+    context 'モノを削除した場合' do
+      it '削除できる' do
+        first(:link, "削除").click
+        page.driver.browser.switch_to.alert.accept
+        expect(page).to have_content '削除しました'
       end
     end
   end
