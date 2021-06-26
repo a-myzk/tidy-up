@@ -51,6 +51,12 @@ RSpec.describe 'モノ管理機能', type: :system do
         expect(item_content[0]).to have_content 'test_name5'
       end
     end
+    context 'モノの詳細/再診断ボタンを押した場合' do
+      it 'モノの詳細/再診断ページへ遷移できる' do
+        first(:link, "詳細を見る / 再診断").click
+        expect(page).to have_content 'test_name5'
+      end
+    end
     context 'モノを編集した場合' do
       it '編集できる' do
         find('#edit-button0').click
