@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
     <% if current_user.try(:admin?) %>
-      <h2><%= @user.name %>のモノ一覧（管理者）</h2>
+      <h2 class ="index-title m-4"><%= @user.name %>のモノ一覧（管理者）</h2>
     <% else %>
-      <h2><%= @user.name %>のモノ一覧</h2>
+      <h2 class ="index-title m-4"><%= @user.name %>のモノ一覧</h2>
     <% end %>
 
-    <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info mr-3 mt-3" %>
-    <%= link_to 'フラグ一覧を見る', flags_path, class: "btn btn-outline-info mr-3 mt-3" %>
+    <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info m-4" %>
+    <%= link_to 'フラグ一覧を見る', flags_path, class: "btn btn-outline-info m-4" %>
     <% if current_user.try(:admin?) %>
-      <%= link_to '管理画面', rails_admin_path, class: "btn btn-outline-info mt-3" %>
+      <%= link_to '管理画面', rails_admin_path, class: "btn btn-outline-info m-4" %>
     <% end %>
   </div>
 
