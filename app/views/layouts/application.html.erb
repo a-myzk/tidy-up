@@ -16,54 +16,56 @@
   </head>
 
   <body>
-    <div class="content">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#!">Tidy Up</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#!">Tidy Up</a>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn btn-outline-info mr-3" %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn btn-outline-info mr-3" %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-info" %></a>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info mr-3" %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-outline-info mr-3" %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!"><%= link_to "管理者ゲストログイン", users_admin_guest_sign_in_path, method: :post, class: "btn btn-outline-info" %></a>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </div>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn btn-outline-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn btn-outline-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-info" %></a>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-outline-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "管理者ゲストログイン", users_admin_guest_sign_in_path, method: :post, class: "btn btn-outline-info" %></a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+    </header>
 
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <main>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </main>
 
     <footer class="footer bg-light">
       <div class="text-center" >©a-myzk</div>

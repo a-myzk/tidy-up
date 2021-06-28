@@ -1,17 +1,25 @@
 @charset "utf-8";
 
-.item-content {
+table {
   width: 100%;
   min-height: 20vh;
+  background-color: rgb(243, 239, 226);
 }
 
-.table {
-  width: 100%;
-  min-height: 100vh;
+.item-content {
+  padding: 20px;
+  border:solid #d1d1d1 ;
+  border-width: 10px 0px;
+}
+
+.category-title {
+  border-bottom:solid black 1px;
 }
 
 .category-chart {
-  border: rgb(156, 156, 156) solid 1px;
-  width: 60%;
-
+  width: 50px;
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(207, 21, 21);
+  border-radius: 20px;
 }
