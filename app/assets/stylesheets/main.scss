@@ -1,17 +1,36 @@
-html {
-  height: 100%;
-}
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
-.content {
-  flex: 1;
-  size: 10px;
-  height: 40px;
-  width: 100%;
+
+header {
+  height: 100px;
 }
+
+main {
+  min-height: calc(100vh - 100px);
+  padding-bottom: 30px;
+}
+
 footer {
-  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
 }
+
+.nav-title {
+  letter-spacing: 5px;
+}
+
+.copyright {
+  font-size: 5px;
+  padding-top: 7px;
+}
+
+// .content {
+//   flex: 1;
+//   size: 10px;
+//   height: 40px;
+//   width: 100%;
+// }

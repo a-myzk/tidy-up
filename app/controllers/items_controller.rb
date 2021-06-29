@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @items = current_user.items.order(created_at: :DESC)
+    @items = current_user.items.order(created_at: :DESC).page(params[:page]).per(5)
     @chart = current_user.items.group(:category).count
     @user = current_user
   end

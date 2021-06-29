@@ -1,17 +1,56 @@
 @charset "utf-8";
 
-.item-content {
+table {
   width: 100%;
   min-height: 20vh;
 }
 
-.table {
-  width: 100%;
-  min-height: 100vh;
+.item-content {
+  padding: 20px;
+  border:solid #efefef ;
+  border-width: 10px 0px;
+}
+
+.category-title {
+  border-bottom:solid black 1px;
 }
 
 .category-chart {
-  border: rgb(156, 156, 156) solid 1px;
-  width: 60%;
+  width: 50px;
+  height: 400px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #efefef;
+  border-radius: 20px;
+}
 
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.actions {
+  align-items: center;
+}
+
+.answer-title {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.answer-content {
+  font-size: 18px;
 }

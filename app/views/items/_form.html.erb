@@ -74,11 +74,16 @@
         </div>
       </div>
 
-      <%= form.submit '登録して診断する' %>
-
+      <div class="actions d-flex justify-content-center">
+        <% if controller.action_name == "new" %>
+          <%= form.submit '登録して診断する' %>
+        <% else controller.action_name == "edit" %>
+          <%= form.submit '編集を反映する' %>
+        <% end %>
+      </div>
     </div>
 
-    <div class="mt-3">
+    <div class="mt-3 mb-3 d-flex justify-content-center">
       <%= link_to "モノ一覧画面にもどる", items_path, class: "btn btn-secondary text-white" %>
     </div>
 
