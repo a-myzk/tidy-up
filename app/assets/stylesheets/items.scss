@@ -3,7 +3,6 @@
 table {
   width: 100%;
   min-height: 20vh;
-  background-color: rgb(243, 239, 226);
 }
 
 .item-content {
@@ -40,4 +39,17 @@ table {
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
   border-radius: 15px;    /*角を丸くする*/
+}
+
+.actions {
+  align-items: center;
+}
+
+.answer-title {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.answer-content {
+  font-size: 18px;
 }

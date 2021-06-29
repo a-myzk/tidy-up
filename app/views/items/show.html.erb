@@ -1,33 +1,32 @@
-<div class="d-flex flex-column">
+<div class="container d-flex flex-column">
   <h1>詳細画面</h1>
 
-<table class="item-content table-reflow text-center bg-light">
-  <thead>
-    <tr>
-      <th></th>
-      <th>モノ:</th>
-      <th>写真: </th>
-      <th>カテゴリー:</th>
-      <th>ステータス:</th>
-      <th>コメント:</th>
-      <th>最終更新日:</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td><%= @item.name %></td>
-      <td style="width: 220px;"><%= image_tag @item.image.url %></td>
-      <td><%= @item.category %></td>
-      <td><%= @item.status %></td>
-      <td style="width: 220px;"><%= @item.comment %></td>
-      <td><%= @item.updated_at.strftime('%Y/%m/%d') %></td>
-      <td><%= link_to '編集', edit_item_path(@item.id), class: "btn btn-outline-dark" %></td>
-      <td><%= link_to '削除', @item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
-    </tr>
-  </tbody>
-</table>
+  <table class="item-content table table-reflow text-center">
+    <thead>
+      <tr>
+        <th>モノ</th>
+        <th>写真</th>
+        <th>カテゴリー</th>
+        <th>ステータス</th>
+        <th>コメント</th>
+        <th>最終更新日</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody class="alain-item-center">
+      <tr>
+        <td><%= @item.name %></td>
+        <td style="width: 220px;"><%= image_tag @item.image.url %></td>
+        <td><%= @item.category %></td>
+        <td><%= @item.status %></td>
+        <td style="width: 220px;"><%= @item.comment %></td>
+        <td><%= @item.updated_at.strftime('%Y/%m/%d') %></td>
+        <td><%= link_to '編集', edit_item_path(@item.id), class: "btn btn-outline-dark" %></td>
+        <td><%= link_to '削除', @item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
+      </tr>
+    </tbody>
+  </table>
+
 
 <% @item.user_id == current_user.id %>
 <% if @flag.present? %>
@@ -40,35 +39,36 @@
   </div>
 <% end %>
 
-<h3 class="mt-5 mb-4 text-center">断捨離診断</h3>
-<% if @item.category == "衣料品"%>
-  <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
-  <div id="clothes_diagnoses_area">
-    <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
-  </div>
-<% elsif @item.category == "日用品"%>
-  <%= render partial: 'goods_diagnoses/form', locals: { goods_diagnosis: @goods_diagnosis, item: @item } %>
-  <div id="goods_diagnoses_area">
-    <%= render partial: 'goods_diagnoses/index', locals: { goods_diagnoses: @goods_diagnoses, item: @item } %>
-  </div>
-<% elsif @item.category == "書籍"%>
-  <%= render partial: 'book_diagnoses/form', locals: { book_diagnosis: @book_diagnosis, item: @item } %>
-  <div id="book_diagnoses_area">
-    <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
-  </div>
-<% elsif @item.category == "その他"%>
-  <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
-  <div id="other_diagnoses_area">
-    <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
-  </div>
-<% else %>
-  <p>診断ができません。カテゴリーを選択してください。</p>
-<% end %>
+  <h3 class="mt-5 mb-4 text-center">断捨離診断</h3>
+  <% if @item.category == "衣料品"%>
+    <%= render partial: 'clothes_diagnoses/form', locals: { clothes_diagnosis: @clothes_diagnosis, item: @item } %>
+    <div id="clothes_diagnoses_area">
+      <%= render partial: 'clothes_diagnoses/index', locals: { clothes_diagnoses: @clothes_diagnoses, item: @item } %>
+    </div>
+  <% elsif @item.category == "日用品"%>
+    <%= render partial: 'goods_diagnoses/form', locals: { goods_diagnosis: @goods_diagnosis, item: @item } %>
+    <div id="goods_diagnoses_area">
+      <%= render partial: 'goods_diagnoses/index', locals: { goods_diagnoses: @goods_diagnoses, item: @item } %>
+    </div>
+  <% elsif @item.category == "書籍"%>
+    <%= render partial: 'book_diagnoses/form', locals: { book_diagnosis: @book_diagnosis, item: @item } %>
+    <div id="book_diagnoses_area">
+      <%= render partial: 'book_diagnoses/index', locals: { book_diagnoses: @book_diagnoses, item: @item } %>
+    </div>
+  <% elsif @item.category == "その他"%>
+    <%= render partial: 'other_diagnoses/form', locals: { other_diagnosis: @other_diagnosis, item: @item } %>
+    <div id="other_diagnoses_area">
+      <%= render partial: 'other_diagnoses/index', locals: { other_diagnoses: @other_diagnoses, item: @item } %>
+    </div>
+  <% else %>
+    <p class="alert alert-secondary text-center">診断ができません。カテゴリーを選択してください。</p>
+  <% end %>
 
-<div class="userpage-item mt-2">
-  <%= link_to "編集する", edit_item_path, class: "btn btn-outline-info mb-3" %>
-</div>
+  <div class="userpage-item mt-2">
+    <%= link_to "編集する", edit_item_path, class: "btn btn-outline-info mb-3" %>
+  </div>
 
-<div class="userpage-item mt-2 mb-5">
-  <%= link_to "モノ一覧画面にもどる", items_path, class: "btn btn-outline-dark" %>
+  <div class="userpage-item mt-2 mb-5">
+    <%= link_to "モノ一覧画面にもどる", items_path, class: "btn btn-outline-dark" %>
+  </div>
 </div>
