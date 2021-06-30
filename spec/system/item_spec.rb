@@ -47,8 +47,8 @@ RSpec.describe 'モノ管理機能', type: :system do
     end
     context 'モノ一覧が更新日時の降順に並んでいる場合' do
       it '最後に更新したモノが一番上に表示される' do
-        item_content = all('.item_content')
-        expect(item_content[0]).to have_content 'test_name5'
+        item_name = all('#item-name')
+        expect(item_name[0]).to have_content 'test_name5'
       end
     end
     context 'モノの詳細/再診断ボタンを押した場合' do
@@ -62,7 +62,7 @@ RSpec.describe 'モノ管理機能', type: :system do
         find('#edit-button0').click
         expect(page).to have_content 'test_comment5'
         fill_in 'item[comment]', with: 'コメント1'
-        click_on '登録して診断する'
+        click_on '編集を反映する'
         expect(page).to have_content '編集しました'
         expect(page).not_to have_content 'test_comment5'
       end

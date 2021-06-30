@@ -30,7 +30,7 @@
       <% index = 0 %>
       <% @items.each do |item| %>
         <tr>
-          <td><%= item.name %></td>
+          <td id=item-name ><%= item.name %></td>
           <td><%= item.category %></td>
           <td><%= item.status %></td>
           <td><%= item.updated_at.strftime('%Y/%m/%d') %></td>
