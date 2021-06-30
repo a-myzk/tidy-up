@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+      user: ユーザー
+      flag: フラグ
+    attributes:
+      item:
+        name: モノ
+        image: 写真
+        comment: コメント
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶

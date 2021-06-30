@@ -1,0 +1,102 @@
+<%= form_with(model: [item, book_diagnosis]) do |form| %>
+  <% if book_diagnosis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_diagnosis.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% book_diagnosis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- 質問1 --->
+  <div class="d-flex justify-content-center text-center card mb-5">
+    <div class="answer_field">
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">1.購入から1年以上経った雑誌である</div>
+      <div class="answer-content p-3 m-2 card-body">
+        <%= form.radio_button :one_answer, :good_one, required: :firefox, id: "radio_button1", class: "card-text" %>
+        <%= form.label :one_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :one_answer, :normal_one, id: "radio_button2", class: "card-text" %>
+        <%= form.label :one_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :one_answer, :bad_one, id: "radio_button3", class: "card-text" %>
+        <%= form.label :one_answer, 'あてはまらない' %>
+      </div>
+    </div>
+  </div>
+
+    <br>
+
+  <!-- 質問2 --->
+  <div class="d-flex justify-content-center text-center card mb-5">
+    <div class="answer_field">
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">2.途中まで読んだが、それからしばらく経っている</div>
+      <div class="answer-content p-3 m-2 card-body">
+        <%= form.radio_button :two_answer, :good_two, required: :firefox, id: "radio_button4", class: "card-text" %>
+        <%= form.label :two_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :two_answer, :normal_two, id: "radio_button5", class: "card-text" %>
+        <%= form.label :two_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :two_answer, :bad_two, id: "radio_button6", class: "card-text" %>
+        <%= form.label :two_answer, 'あてはまらない' %>
+      </div>
+    </div>
+  </div>
+
+    <br>
+
+  <!-- 質問3 --->
+  <div class="d-flex justify-content-center text-center card mb-5">
+    <div class="answer_field">
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">3.買ったものの、結局読んでいない</div>
+      <div class="answer-content p-3 m-2 card-body">
+        <%= form.radio_button :three_answer, :good_three, required: :firefox, id: "radio_button7", class: "card-text" %>
+        <%= form.label :three_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :three_answer, :normal_three, id: "radio_button8", class: "card-text" %>
+        <%= form.label :three_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :three_answer, :bad_three, id: "radio_button9", class: "card-text" %>
+        <%= form.label :three_answer, 'あてはまらない' %>
+      </div>
+    </div>
+  </div>
+
+    <br>
+
+  <!-- 質問4 --->
+  <div class="d-flex justify-content-center text-center card mb-5">
+    <div class="answer_field">
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">4.表紙を眺めても、内容を思い出せない</div>
+      <div class="answer-content p-3 m-2 card-body">
+        <%= form.radio_button :four_answer, :good_four, required: :firefox, id: "radio_button10", class: "card-text" %>
+        <%= form.label :four_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :four_answer, :normal_four, id: "radio_button11", class: "card-text" %>
+        <%= form.label :four_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :four_answer, :bad_four, id: "radio_button12", class: "card-text" %>
+        <%= form.label :four_answer, 'あてはまらない' %>
+      </div>
+    </div>
+  </div>
+
+    <br>
+
+  <!-- 質問5 --->
+  <div class="d-flex justify-content-center text-center card mb-5">
+    <div class="answer_field">
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">5.読み返すことは無いだろう</div>
+      <div class="answer-content p-3 m-2 card-body">
+        <%= form.radio_button :five_answer, :good_five, required: :firefox, id: "radio_button13", class: "card-text" %>
+        <%= form.label :five_answer, 'あてはまる', class: 'mr-5'%>
+        <%= form.radio_button :five_answer, :normal_five, id: "radio_button14", class: "card-text" %>
+        <%= form.label :five_answer, 'どちらでもない', class: 'mr-5' %>
+        <%= form.radio_button :five_answer, :bad_five, id: "radio_button15", class: "card-text" %>
+        <%= form.label :five_answer, 'あてはまらない' %>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="actions d-flex justify-content-center mb-5">
+    <%= form.submit '診断する', class: "diagnosis-btn btn btn-outline-info w-100" %>
+  </div>
+
+<% end %>

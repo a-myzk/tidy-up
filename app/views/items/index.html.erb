@@ -1,0 +1,53 @@
+<div class="container d-flex">
+  <div class="row">
+    <% if current_user.try(:admin?) %>
+      <h3 class ="index-title m-4"><%= @user.name %>のマイページ（管理者）</h3>
+    <% else %>
+      <h3 class ="index-title m-4"><%= @user.name %>のマイページ</h3>
+    <% end %>
+
+    <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info m-4" %>
+    <%= link_to '重要フラグ一覧を見る', flags_path, class: "btn btn-outline-info m-4" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to '管理画面', rails_admin_path, class: "btn btn-outline-info m-4" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="d-flex container-fluid table-responsive-sm ">
+  <div class="item-content">
+    <table class="item-table table table-hover flex-fill bg-light">
+      <thead>
+        <tr>
+          <th>モノ</th>
+          <th>カテゴリー</th>
+          <th>ステータス</th>
+          <th>更新日</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% index = 0 %>
+      <% @items.each do |item| %>
+        <tr>
+          <td id=item-name ><%= item.name %></td>
+          <td><%= item.category %></td>
+          <td><%= item.status %></td>
+          <td><%= item.updated_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to '詳細を見る / 再診断', item_path(item.id), class: "btn btn-outline-dark" %></td>
+          <td><%= link_to '編集', edit_item_path(item.id), class: "btn btn-outline-dark", id: "edit-button#{index}" %></td>
+          <td><%= link_to '削除', item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
+        </tr>
+        <% index += 1 %>
+      </tbody>
+    <% end %>
+    </table>
+    <%= paginate @items, theme: 'twitter-bootstrap-4', class: "pagination"%>
+  </div>
+
+  <div class="category-chart flex-fill d-inline-block">
+    <h4 class="category-title text-center">カテゴリー別グラフ</h4>
+    <%= pie_chart @chart %>
+  </div>
+
+</div>

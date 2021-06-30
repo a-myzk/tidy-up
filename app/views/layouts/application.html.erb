@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>TidyUp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=2.0,user-scalable=yes">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="nav-title navbar-brand text-white" href="#!">Tidy Up</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto mt-2 md-0">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn text-white btn-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn text-white btn-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn text-white btn-info" %></a>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "新規登録", new_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "ログイン", new_user_session_path, class: "btn text-white btn-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn text-white btn-info mr-3" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!"><%= link_to "管理者ゲストログイン", users_admin_guest_sign_in_path, method: :post, class: "btn text-white btn-info" %></a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+    </header>
+
+    <main>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </main>
+
+    <footer class="footer bg-info">
+      <div class="copyright text-center text-white" >©a-myzk</div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,35 @@
+<div class="container d-flex">
+  <h2>重要フラグ一覧</h2>
+  <%= link_to '断捨離診断する', new_item_path, class: "btn btn-outline-info m-4" %>
+</div>
+
+<div class="container d-flex">
+  <div class="table table-hover text-center">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>カテゴリー</th>
+          <th>ステータス</th>
+          <th>更新日</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    <% index = 0 %>
+    <% @flag.each do |flag| %>
+      <% if current_user == flag.user %>
+      <tr>
+        <td><%= flag.item.name %></td>
+        <td><%= flag.item.category %></td>
+        <td><%= flag.item.status %></td>
+        <td><%= flag.item.updated_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to '詳細を見る / 再診断', item_path(flag.item.id), class: "btn btn-outline-dark" %></td>
+          <td><%= link_to '編集', edit_item_path(flag.item.id), class: "btn btn-outline-dark", id: "edit-button#{index}" %></td>
+          <td><%= link_to '削除', flag.item, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-dark" %></td>
+      </tr>
+      <% index += 1 %>
+      <% end %>
+    <% end %>
+    </table>
+  </div>
+</div>
