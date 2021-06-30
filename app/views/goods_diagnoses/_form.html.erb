@@ -13,7 +13,7 @@
   <!-- 質問1 --->
   <div class="d-flex justify-content-center text-center card mb-5">
     <div class="answer_field">
-      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">扱いにくく、使用頻度が低い</div>
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">1.扱いにくく、使用頻度が低い</div>
       <div class="answer-content p-3 m-2 card-body">
         <%= form.radio_button :one_answer, :good_one, required: :firefox, id: "radio_button1", class: "card-text" %>
         <%= form.label :one_answer, 'あてはまる', class: 'mr-5'%>
@@ -30,7 +30,7 @@
   <!-- 質問2 --->
   <div class="d-flex justify-content-center text-center card mb-5">
     <div class="answer_field">
-      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">いくつも同じようなものを持っている</div>
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">2.いくつも同じようなものを持っている</div>
       <div class="answer-content p-3 m-2 card-body">
         <%= form.radio_button :two_answer, :good_two, required: :firefox, id: "radio_button4", class: "card-text" %>
         <%= form.label :two_answer, 'あてはまる', class: 'mr-5'%>
@@ -47,7 +47,7 @@
   <!-- 質問3 --->
   <div class="d-flex justify-content-center text-center card mb-5">
     <div class="answer_field">
-      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">1年以上使っておらず、現時点で使う予定がない</div>
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">3.過去1年以上使っておらず、現時点で使う予定がない</div>
       <div class="answer-content p-3 m-2 card-body">
         <%= form.radio_button :three_answer, :good_three, required: :firefox, id: "radio_button7", class: "card-text" %>
         <%= form.label :three_answer, 'あてはまる', class: 'mr-5'%>
@@ -64,7 +64,7 @@
   <!-- 質問4 --->
   <div class="d-flex justify-content-center text-center card mb-5">
     <div class="answer_field">
-      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">景品や引き出物でもらったものだが、使っていない</div>
+      <div class="answer-title mb-2 card-header bg-light text-info font-weight-bold">4.景品や引き出物でもらったものだが、使っていない</div>
       <div class="answer-content p-3 m-2 card-body">
         <%= form.radio_button :four_answer, :good_four, required: :firefox, id: "radio_button10", class: "card-text" %>
         <%= form.label :four_answer, 'あてはまる', class: 'mr-5'%>
@@ -95,8 +95,8 @@
 
   <br>
 
-  <div class="actions d-flex justify-content-center mb-3">
-    <%= form.submit '診断する' %>
+  <div class="actions d-flex justify-content-center mb-5">
+    <%= form.submit '診断する', class: "diagnosis-btn btn btn-outline-info w-100" %>
   </div>
 
 <% end %>

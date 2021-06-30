@@ -1,25 +1,26 @@
 <% book_diagnoses.each do |book_diagnosis| %>
   <% if book_diagnosis.id.present? %>
 
+  <p class="diagnosis-result">診断結果</p>
   <div class="d-flex justify-content-center" >
-    <div class="card w-50 p-3">
+    <div class="card w-100 p-3">
       <% if (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
       BookDiagnosis.two_answers[book_diagnosis.two_answer] +
       BookDiagnosis.three_answers[book_diagnosis.three_answer] +
       BookDiagnosis.four_answers[book_diagnosis.four_answer]+
       BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i <= 3 %>
-        <div class="card-header" id="result1">まだ捨てちゃダメ！</div>
-        <div class="card-text">手放すことにかなり迷いがあるのでは？あなたにとって大切なものだという証拠です。大切にしまっておきましょう！</div>
+        <div class="result-title card-header bg-danger" id="result1">まだ捨てちゃダメ！</div>
+        <div class="result-content card-text">手放すことにかなり迷いがあるのでは？あなたにとって大切な本だという証拠です。大切にしまっておきましょう！</div>
       <% elsif (BookDiagnosis.one_answers[book_diagnosis.one_answer]+
       BookDiagnosis.two_answers[book_diagnosis.two_answer] +
       BookDiagnosis.three_answers[book_diagnosis.three_answer] +
       BookDiagnosis.four_answers[book_diagnosis.four_answer]+
       BookDiagnosis.five_answers[book_diagnosis.five_answer]).to_i >= 7 %>
-        <div class="card-header" id="result2">今が手放すタイミング！</div>
-        <div class="card-text">もうそれは使っていませんね？今まで活躍してくれたことに感謝して、新しい出会いのために手放しましょう！</div>
+        <div class="result-title card-header bg-info" id="result2">今が手放すタイミング！</div>
+        <div class="result-content card-text">もうその本は読むことは無いかも。新しい本との出会いのために手放しましょう！</div>
       <% else %>
-        <div class="card-header" id="result3">もう少し様子を見よう！</div>
-        <div class="card-text">手放すにはまだ早いかも？来年まで使わなかったら断捨離を検討してみましょう！</div>
+        <div class="result-title card-header bg-warning" id="result3">もう少し様子を見よう！</div>
+        <div class="result-content card-text">手放すにはまだ早いかも？来年まで使わなかったら断捨離を検討してみましょう！</div>
       <% end %>
     </div>
   </div>
