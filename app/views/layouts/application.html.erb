@@ -30,12 +30,12 @@
                   <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn text-white btn-info mr-3" %></a>
                 </li>
                 <li class="nav-item">
-                  <% unless current_user.id == 1 || 2 || 8 || 9 %>
+                  <% unless current_user.name == "guest" %>
                     <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn text-white btn-info mr-3" %></a>
                   <% end %>
                 </li>
                 <li class="nav-item">
-                  <% unless current_user.id == 1 || 2 || 8 || 9 %>
+                  <% unless current_user.name == "guest" %>
                     <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
                   <% end %>
                 </li>
