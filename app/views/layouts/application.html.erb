@@ -30,10 +30,14 @@
                   <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn text-white btn-info mr-3" %></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn text-white btn-info mr-3" %></a>
+                  <% unless current_user.id == 8 %>
+                    <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn text-white btn-info mr-3" %></a>
+                  <% end %>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
+                  <% unless current_user.id == 8 %>
+                    <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
+                  <% end %>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn text-white btn-info" %></a>
