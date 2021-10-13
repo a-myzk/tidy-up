@@ -30,10 +30,14 @@
                   <a class="nav-link" href="#!"><%= link_to "モノ一覧", items_path, class: "btn text-white btn-info mr-3" %></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn text-white btn-info mr-3" %></a>
+                  <% unless current_user.id == 8 %>
+                    <a class="nav-link" href="#!"><%= link_to "アカウント確認", user_path(current_user.id), class: "btn text-white btn-info mr-3" %></a>
+                  <% end %>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
+                  <% unless current_user.id == 8 %>
+                    <a class="nav-link" href="#!"><%= link_to "アカウント編集", edit_user_registration_path, class: "btn text-white btn-info mr-3" %></a>
+                  <% end %>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#!"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn text-white btn-info" %></a>
@@ -47,9 +51,6 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#!"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn text-white btn-info mr-3" %></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#!"><%= link_to "管理者ゲストログイン", users_admin_guest_sign_in_path, method: :post, class: "btn text-white btn-info" %></a>
                 </li>
               <% end %>
             </ul>
@@ -68,7 +69,7 @@
     </main>
 
     <footer class="footer bg-info">
-      <div class="copyright text-center text-white" >©a-myzk</div>
+      <div class="copyright text-center text-white" >&copy; Tidy Up</div>
     </footer>
   </body>
 </html>
