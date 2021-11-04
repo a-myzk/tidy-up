@@ -39,6 +39,9 @@ gem 'faker'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 
+gem 'fog-aws'
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'spring'
